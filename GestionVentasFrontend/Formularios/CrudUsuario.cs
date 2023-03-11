@@ -12,14 +12,29 @@ namespace GestionVentasFrontend.Formularios
 {
     public partial class CrudUsuario : Form
     {
-        public CrudUsuario()
+        int modo = 0;
+        public CrudUsuario(int tipo)
         {
             InitializeComponent();
+            modo = tipo;
         }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             pnlForm.Visible = true;
+        }
+
+        private void CrudUsuario_Load(object sender, EventArgs e)
+        {
+            if (modo == 0)
+            {
+                this.FormBorderStyle= FormBorderStyle.None;
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+
+            }
         }
     }
 }

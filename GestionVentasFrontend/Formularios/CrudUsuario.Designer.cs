@@ -762,6 +762,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CrudUsuario";
             this.Text = "CrudUsuario";
+            this.Load += new System.EventHandler(this.CrudUsuario_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).EndInit();

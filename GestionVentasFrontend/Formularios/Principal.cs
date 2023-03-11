@@ -1,4 +1,5 @@
 ﻿using GestionVentasFrontend.Formularios;
+using GestionVentasFrontend.Formularios.Venta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,7 +91,7 @@ namespace GestionVentasFrontend
 
         private void BtnUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new CrudUsuario());
+            AbrirFormEnPanel(new CrudUsuario(0));
         }
 
         private void PicLogoMAIN_Click(object sender, EventArgs e)
@@ -102,6 +103,17 @@ namespace GestionVentasFrontend
 
         private void Principal_Resize(object sender, EventArgs e)
         {
+
+        }
+
+        private void BtnVender_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Venta());
+        }
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ConsultarVentas());
 
         }
     }

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GestionVentasFrontend.Formularios.Venta
 {
-    public partial class Venta : Form
+    public partial class ConfirmarVenta : Form
     {
-        public Venta()
+        public ConfirmarVenta()
         {
             InitializeComponent();
-        }
-
-        private void BtnSiguiente_Click(object sender, EventArgs e)
-        {
-            ConfirmarVenta cv = new ConfirmarVenta();
-            cv.ShowDialog();
         }
     }
 }
