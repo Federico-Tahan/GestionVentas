@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DgvStock = new System.Windows.Forms.DataGridView();
-            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuneto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuneto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lbmarca = new System.Windows.Forms.Label();
             this.lbrubro = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
@@ -51,9 +52,13 @@
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.lbstock = new System.Windows.Forms.Label();
             this.BtnSiguiente = new System.Windows.Forms.Button();
+            this.nupCantidad = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -96,6 +101,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvStock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvStock.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvStock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProd,
@@ -109,67 +122,19 @@
             this.Total,
             this.Accion});
             this.DgvStock.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.DgvStock.Location = new System.Drawing.Point(30, 137);
+            this.DgvStock.Location = new System.Drawing.Point(30, 145);
             this.DgvStock.Name = "DgvStock";
             this.DgvStock.ReadOnly = true;
             this.DgvStock.RowHeadersVisible = false;
             this.DgvStock.Size = new System.Drawing.Size(965, 408);
             this.DgvStock.TabIndex = 11;
             // 
-            // Accion
+            // idProd
             // 
-            this.Accion.FillWeight = 65.98985F;
-            this.Accion.HeaderText = "Accion";
-            this.Accion.Name = "Accion";
-            this.Accion.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.FillWeight = 65.98985F;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // Descuneto
-            // 
-            this.Descuneto.HeaderText = "Descuento";
-            this.Descuneto.Name = "Descuneto";
-            this.Descuneto.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.FillWeight = 65.98985F;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.FillWeight = 65.98985F;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            this.Marca.FillWeight = 65.98985F;
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            // 
-            // Rubro
-            // 
-            this.Rubro.FillWeight = 65.98985F;
-            this.Rubro.HeaderText = "Rubro";
-            this.Rubro.Name = "Rubro";
-            this.Rubro.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.FillWeight = 65.98985F;
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.idProd.FillWeight = 65.98985F;
+            this.idProd.HeaderText = "Codigo Producto";
+            this.idProd.Name = "idProd";
+            this.idProd.ReadOnly = true;
             // 
             // Nombre
             // 
@@ -178,12 +143,60 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // idProd
+            // Descripcion
             // 
-            this.idProd.FillWeight = 65.98985F;
-            this.idProd.HeaderText = "Codigo Producto";
-            this.idProd.Name = "idProd";
-            this.idProd.ReadOnly = true;
+            this.Descripcion.FillWeight = 65.98985F;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Rubro
+            // 
+            this.Rubro.FillWeight = 65.98985F;
+            this.Rubro.HeaderText = "Rubro";
+            this.Rubro.Name = "Rubro";
+            this.Rubro.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            this.Marca.FillWeight = 65.98985F;
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.FillWeight = 65.98985F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.FillWeight = 65.98985F;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // Descuneto
+            // 
+            this.Descuneto.HeaderText = "Descuento";
+            this.Descuneto.Name = "Descuneto";
+            this.Descuneto.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.FillWeight = 65.98985F;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // Accion
+            // 
+            this.Accion.FillWeight = 65.98985F;
+            this.Accion.HeaderText = "Accion";
+            this.Accion.Name = "Accion";
+            this.Accion.ReadOnly = true;
             // 
             // lbmarca
             // 
@@ -285,12 +298,56 @@
             this.BtnSiguiente.UseVisualStyleBackColor = false;
             this.BtnSiguiente.Click += new System.EventHandler(this.BtnSiguiente_Click);
             // 
+            // nupCantidad
+            // 
+            this.nupCantidad.AutoSize = true;
+            this.nupCantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nupCantidad.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.nupCantidad.Location = new System.Drawing.Point(525, 83);
+            this.nupCantidad.Name = "nupCantidad";
+            this.nupCantidad.Size = new System.Drawing.Size(83, 19);
+            this.nupCantidad.TabIndex = 69;
+            this.nupCantidad.Text = "Cantidad";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.DecimalPlaces = 2;
+            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown2.Location = new System.Drawing.Point(529, 105);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(88, 26);
+            this.numericUpDown2.TabIndex = 68;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(638, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 31);
+            this.button1.TabIndex = 70;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1031, 666);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nupCantidad);
+            this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.BtnSiguiente);
             this.Controls.Add(this.lbstock);
             this.Controls.Add(this.txbNombre);
@@ -309,6 +366,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +397,8 @@
         private System.Windows.Forms.TextBox txbNombre;
         private System.Windows.Forms.Label lbstock;
         private System.Windows.Forms.Button BtnSiguiente;
+        private System.Windows.Forms.Label nupCantidad;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Button button1;
     }
 }

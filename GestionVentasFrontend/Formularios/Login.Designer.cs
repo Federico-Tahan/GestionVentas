@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.BtnLogin);
@@ -80,11 +80,11 @@
             // 
             this.BtnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.BtnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLogin.FlatAppearance.BorderSize = 0;
-            this.BtnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.BtnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.BtnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Thistle;
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnLogin.Location = new System.Drawing.Point(261, 475);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(130, 43);
@@ -112,10 +112,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.prueba;
-            this.pictureBox1.Location = new System.Drawing.Point(141, 39);
+            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.a1;
+            this.pictureBox1.Location = new System.Drawing.Point(106, 36);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 287);
+            this.pictureBox1.Size = new System.Drawing.Size(429, 314);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
