@@ -26,22 +26,22 @@ namespace GestionVentasNegocio.Implementacion
 
         public bool CheckarAlias(string alias)
         {
-            throw new NotImplementedException();
+            return lg.CheckarAlias(alias);
         }
 
         public bool CheckearDNI(long dni)
         {
-            throw new NotImplementedException();
+            return lg.CheckearDNI(dni);
         }
 
         public bool ModificacionUsuario(Usuario u)
         {
-            throw new NotImplementedException();
+            return lg.ModificacionUsuario(u);
         }
 
-        public List<Usuario> ObtenerUsuarios()
+        public List<Usuario> ObtenerUsuarios(int a)
         {
-            throw new NotImplementedException();
+            return lg.ObtenerUsuarios(a);
         }
     }
 }

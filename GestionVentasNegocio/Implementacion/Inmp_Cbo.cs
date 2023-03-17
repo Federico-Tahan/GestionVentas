@@ -19,9 +19,25 @@ namespace GestionVentasNegocio.Implementacion
         {
             lg = new Imp_Cbos();
         }
+
+        public List<Localidad> ObtenerLocalidad(int modo)
+        {
+            return lg.ObtenerLocalidad(modo);
+        }
+
         public List<Marca> ObtenerMarcas(int modo)
         {
             return lg.ObtenerMarcas(modo);
+        }
+
+        public List<Producto> ObtenerProducto(int rubro, int marca)
+        {
+            return lg.ObtenerProducto(rubro,marca);
+        }
+
+        public List<Rol> ObtenerRol()
+        {
+            return lg.ObtenerRol();
         }
 
         public List<Rubro> ObtenerRubros(int modo)

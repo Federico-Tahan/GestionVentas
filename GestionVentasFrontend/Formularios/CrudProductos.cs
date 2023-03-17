@@ -431,8 +431,8 @@ namespace GestionVentasFrontend.Formularios
                 }
                 else
                 {
-                        List<Producto> listaFiltrada = lproductos.Where(p => p.marca.Nombre == cboMarcafil.Text).ToList();
-                        cargarDgv(listaFiltrada);
+                    List<Producto> listaFiltrada = lproductos.Where(p => p.marca.Nombre == cboMarcafil.Text).ToList();
+                    cargarDgv(listaFiltrada);
 
                 }
 
@@ -444,8 +444,10 @@ namespace GestionVentasFrontend.Formularios
                     List<Producto> listaFiltrada = lproductos.Where(p => p.rubro.Nombre == cboRubrofil.Text).ToList();
                     cargarDgv(listaFiltrada);
                 }
-
-
+                else
+                {
+                    cargarDgv(lproductos);
+                }
             }
         }
 

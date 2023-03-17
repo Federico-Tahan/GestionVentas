@@ -10,6 +10,12 @@ baja_logica int
 constraint pk_id_rubro primary key (id_rubro)
 )
 
+create table Roles(
+id_roles int identity(1,1),
+nombre varchar(20)
+constraint pk_id_rol primary key (id_roles)
+)
+
 create table Marca(
 id_Marca int identity(1,1),
 Marca varchar(50),
@@ -78,7 +84,8 @@ id_usuario int identity(1,1),
 dni bigint,
 alias varchar(20),
 contraseña varchar(30),
-baja_logica int
+baja_logica int,
+id_rol int,
 constraint pk_id_usuario primary key (id_usuario),
 constraint fk_DNI foreign key (dni) references Empleados(DNI)
 )
@@ -146,3 +153,4 @@ id_accion int
 constraint pk_idbitacora primary key (id_bitacora),
 constraint fk_idusuario foreign key (id_usuario) references usuarios(id_usuario)
 )
+

@@ -11,7 +11,7 @@ namespace GestionVentasNegocio.Interfaz
     {
         bool AltaUsuario(Usuario u);
         bool ModificacionUsuario(Usuario u);
-        List<Usuario> ObtenerUsuarios();
+        List<Usuario> ObtenerUsuarios(int a);
         bool CheckearDNI(long dni);
         bool CheckarAlias(string alias);
     }

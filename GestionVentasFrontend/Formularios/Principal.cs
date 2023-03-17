@@ -91,11 +91,12 @@ namespace GestionVentasFrontend
 
         private void BtnUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new CrudUsuario(0));
+            AbrirFormEnPanel(new CrudUsuario());
         }
 
         private void PicLogoMAIN_Click(object sender, EventArgs e)
         {
+            pnlMain.Controls.Remove(FormActual);
             submenu1.Visible = false;
             submenu2.Visible = false;
             pnlSubmenu3.Visible = false;
