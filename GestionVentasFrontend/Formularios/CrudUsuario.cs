@@ -248,8 +248,6 @@ namespace GestionVentasFrontend.Formularios
                 PicLimpiar.Enabled = false;
                 HabilitarBtn(false);
                 BtnEditar.Enabled = true;
-
-
             }
         }
 

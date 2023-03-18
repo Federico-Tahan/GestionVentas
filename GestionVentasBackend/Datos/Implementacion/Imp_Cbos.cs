@@ -10,6 +10,38 @@ namespace GestionVentasBackend.Datos.Implementacion
 {
     public class Imp_Cbos : iCbos
     {
+        public List<FormaPago> ObtenerFormaPago(int modo)
+        {
+            List<FormaPago> td = new List<FormaPago>();
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+            HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@modo", modo);
+
+            HelperDB.ObtenerInstancia().LeerDB("SP_CARGAR_FormaPago");
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+
+            while (HelperDB.ObtenerInstancia().Dr.Read())
+            {
+                FormaPago rl = new FormaPago();
+
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(0))
+                {
+                    rl.id_formapago = HelperDB.ObtenerInstancia().Dr.GetInt32(0);
+                }
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(1))
+                {
+                    rl.Formapago = HelperDB.ObtenerInstancia().Dr.GetString(1);
+                }
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(2))
+                {
+                    rl.Baja_logica = HelperDB.ObtenerInstancia().Dr.GetInt32(2);
+                }
+                td.Add(rl);
+            }
+            HelperDB.ObtenerInstancia().close();
+
+            return td;
+        }
+
         public List<Localidad> ObtenerLocalidad(int modo)
         {
             List<Localidad> td = new List<Localidad>();

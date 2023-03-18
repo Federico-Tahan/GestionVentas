@@ -109,8 +109,9 @@ constraint fk_id_cliente foreign key (DNI) references Cliente(DNI)
 )
 
 create table FormaDePago(
-id_formapago int,
-formapago varchar(40)
+id_formapago int identity(1,1),
+formapago varchar(40),
+baja_logica int
 constraint pk_id_formapago primary key (id_formapago)
 )
 
@@ -123,10 +124,10 @@ nombre varchar(40),
 apellido varchar(40),
 id_cliente bigint,
 id_usuario int,
-monto_pagado money
+monto_pagado money,
+Bajalogica int
 constraint pk_id_venta primary key(id_venta),
 constraint fk_id_Formapago foreign key(id_formaPago) references FormaDePago(id_formapago),
-constraint fk_id_clientee foreign key (id_cliente) references Cliente(DNI),
 constraint fk_id_usuarioo foreign key (id_usuario) references Usuarios(id_usuario)
 )
 

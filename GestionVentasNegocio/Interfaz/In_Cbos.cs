@@ -16,6 +16,8 @@ namespace GestionVentasNegocio.Interfaz
         List<Localidad> ObtenerLocalidad(int modo);
         List<Rol> ObtenerRol();
         List<Producto> ObtenerProducto(int rubro, int marca);
+        List<FormaPago> ObtenerFormaPago(int modo);
+
 
     }
 }

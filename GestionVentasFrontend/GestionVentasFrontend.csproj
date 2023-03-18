@@ -74,11 +74,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Cliente.cs">
+    <Compile Include="Formularios\CrudCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <Compile Include="Formularios\CrudCliente.Designer.cs">
+      <DependentUpon>CrudCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\CrudProductos.cs">
       <SubType>Form</SubType>
@@ -142,8 +142,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\CrudCliente.resx">
+      <DependentUpon>CrudCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CrudProductos.resx">
       <DependentUpon>CrudProductos.cs</DependentUpon>

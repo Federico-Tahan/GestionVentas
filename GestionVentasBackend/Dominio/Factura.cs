@@ -12,8 +12,6 @@ namespace GestionVentasBackend.Dominio
         public DateTime Fecha { get; set; }
         public FormaPago fp { get; set; }
         public Cliente c { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
         public Usuario user { get; set; }
         public decimal monto_pagado { get; set; }
         public int baja_logica { get; set; }

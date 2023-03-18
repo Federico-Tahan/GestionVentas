@@ -40,6 +40,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DgvDetalle = new System.Windows.Forms.DataGridView();
+            this.idProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuneto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lbmarca = new System.Windows.Forms.Label();
             this.lbrubro = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
@@ -54,16 +64,6 @@
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.lbTotal = new System.Windows.Forms.Label();
             this.txbTotal = new System.Windows.Forms.TextBox();
-            this.idProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuneto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalle)).BeginInit();
@@ -140,6 +140,90 @@
             this.DgvDetalle.Size = new System.Drawing.Size(965, 408);
             this.DgvDetalle.TabIndex = 11;
             this.DgvDetalle.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvDetalle_CellMouseClick);
+            // 
+            // idProd
+            // 
+            this.idProd.FillWeight = 65.98985F;
+            this.idProd.HeaderText = "Codigo Producto";
+            this.idProd.Name = "idProd";
+            this.idProd.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 140F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.FillWeight = 65.98985F;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // Rubro
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Rubro.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Rubro.FillWeight = 65.98985F;
+            this.Rubro.HeaderText = "Rubro";
+            this.Rubro.Name = "Rubro";
+            this.Rubro.ReadOnly = true;
+            // 
+            // Marca
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Marca.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Marca.FillWeight = 65.98985F;
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Precio.FillWeight = 65.98985F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle5;
+            this.cantidad.FillWeight = 65.98985F;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // Descuneto
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Descuneto.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Descuneto.FillWeight = 60F;
+            this.Descuneto.HeaderText = "Descuento";
+            this.Descuneto.Name = "Descuneto";
+            this.Descuneto.ReadOnly = true;
+            // 
+            // Total
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Total.FillWeight = 65.98985F;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // Accion
+            // 
+            this.Accion.FillWeight = 55.98985F;
+            this.Accion.HeaderText = "Accion";
+            this.Accion.Name = "Accion";
+            this.Accion.ReadOnly = true;
+            this.Accion.Text = "Quitar";
+            this.Accion.UseColumnTextForButtonValue = true;
             // 
             // lbmarca
             // 
@@ -310,90 +394,6 @@
             this.txbTotal.Name = "txbTotal";
             this.txbTotal.Size = new System.Drawing.Size(113, 26);
             this.txbTotal.TabIndex = 71;
-            // 
-            // idProd
-            // 
-            this.idProd.FillWeight = 65.98985F;
-            this.idProd.HeaderText = "Codigo Producto";
-            this.idProd.Name = "idProd";
-            this.idProd.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 140F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.FillWeight = 65.98985F;
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Rubro
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Rubro.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Rubro.FillWeight = 65.98985F;
-            this.Rubro.HeaderText = "Rubro";
-            this.Rubro.Name = "Rubro";
-            this.Rubro.ReadOnly = true;
-            // 
-            // Marca
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Marca.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Marca.FillWeight = 65.98985F;
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Precio.FillWeight = 65.98985F;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle5;
-            this.cantidad.FillWeight = 65.98985F;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // Descuneto
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Descuneto.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Descuneto.FillWeight = 60F;
-            this.Descuneto.HeaderText = "Descuento";
-            this.Descuneto.Name = "Descuneto";
-            this.Descuneto.ReadOnly = true;
-            // 
-            // Total
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Total.FillWeight = 65.98985F;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // Accion
-            // 
-            this.Accion.FillWeight = 55.98985F;
-            this.Accion.HeaderText = "Accion";
-            this.Accion.Name = "Accion";
-            this.Accion.ReadOnly = true;
-            this.Accion.Text = "Quitar";
-            this.Accion.UseColumnTextForButtonValue = true;
             // 
             // Venta
             // 

@@ -20,6 +20,11 @@ namespace GestionVentasNegocio.Implementacion
             lg = new Imp_Cbos();
         }
 
+        public List<FormaPago> ObtenerFormaPago(int modo)
+        {
+            return lg.ObtenerFormaPago(modo);
+        }
+
         public List<Localidad> ObtenerLocalidad(int modo)
         {
             return lg.ObtenerLocalidad(modo);

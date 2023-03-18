@@ -1,6 +1,6 @@
 ﻿namespace GestionVentasFrontend.Formularios
 {
-    partial class Cliente
+    partial class CrudCliente
     {
         /// <summary>
         /// Required designer variable.

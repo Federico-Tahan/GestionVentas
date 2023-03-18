@@ -14,6 +14,8 @@ namespace GestionVentasBackend.Datos.Interfaz
         List<Rubro> ObtenerRubros(int modo);
 
         List<Localidad> ObtenerLocalidad(int modo);
+        List<FormaPago> ObtenerFormaPago(int modo);
+
         List<Rol> ObtenerRol();
 
         List<Producto> ObtenerProducto(int rubro ,int marca);

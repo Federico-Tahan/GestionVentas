@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestionVentasFrontend.Formularios
 {
-    public partial class Cliente : Form
+    public partial class CrudCliente : Form
     {
-        public Cliente()
+        public CrudCliente()
         {
             InitializeComponent();
         }

@@ -19,7 +19,6 @@ namespace GestionVentasFrontend.Formularios.Venta
         In_CrudProductos lg;
 
         Producto prodaAgregar = new Producto();
-        DetalleFactura DetalleSeleccionado = new DetalleFactura();
 
         Factura f = new Factura();
         List<DetalleFactura> detFact = new List<DetalleFactura>();
@@ -35,8 +34,29 @@ namespace GestionVentasFrontend.Formularios.Venta
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            ConfirmarVenta cv = new ConfirmarVenta();
+            if (f.LDetalle.Count == 0)
+            {
+                MessageBox.Show("Debe Cargar al menos un producto a la venta para continuar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            ConfirmarVenta cv = new ConfirmarVenta(f);
             cv.ShowDialog();
+            if (cv.DialogResult == DialogResult.OK)
+            {
+                cargar_cbo(cboMarca, "Nombre", "id_Marca", lc.ObtenerMarcas(0));
+                cboMarca.SelectedIndex = 0;
+                cargar_cbo(cborubro, "Nombre", "id_rubro", lc.ObtenerRubros(0));
+                cborubro.SelectedIndex = 0;
+                cargar_cbo(cboprod, "Nombre", "Id_Producto", lc.ObtenerProducto((int)cborubro.SelectedValue, (int)cboMarca.SelectedValue));
+                txbStock.Text = "";
+                txbTotal.Text = "";
+                nupCant.Value = 0;
+                DgvDetalle.Rows.Clear();
+                f = new Factura();
+                detFact = new List<DetalleFactura>();
+                df = new DetalleFactura();
+                f.LDetalle = detFact;
+            }
         }
 
         private void Venta_Load(object sender, EventArgs e)
@@ -96,25 +116,37 @@ namespace GestionVentasFrontend.Formularios.Venta
         {
             if (cboprod.SelectedIndex != -1)
             {
-                if (!f.buscar(Convert.ToInt32(cboprod.SelectedValue)))
+                if (Convert.ToDecimal(nupCant.Value) != 0)
                 {
-                    df = new DetalleFactura();
-
-                    if (Convert.ToDecimal(nupCant.Value) != 0)
+                    if (Convert.ToDecimal(nupCant.Value) <= Convert.ToDecimal(txbStock.Text))
                     {
-                        df.prod = (Producto)cboprod.SelectedItem;
-                        df.Cantidad = Math.Round(Convert.ToDecimal(nupCant.Value), df.prod.unidadMedida.CantidadDecimal);
-                        df.Precio = df.prod.Precio;
-                        df.Descuento = df.prod.Descuento;
+                        if (!f.buscar(Convert.ToInt32(cboprod.SelectedValue)))
+                        {
 
-                        f.LDetalle.Add(df);
-                        cargarDgv(f.LDetalle);
-                        txbTotal.Text = "$ " + f.Calcular_Total();
+                            df = new DetalleFactura();
+                            df.prod = (Producto)cboprod.SelectedItem;
+                            df.Cantidad = Math.Round(Convert.ToDecimal(nupCant.Value), df.prod.unidadMedida.CantidadDecimal);
+                            df.Precio = df.prod.Precio;
+                            df.Descuento = df.prod.Descuento;
+
+                            f.LDetalle.Add(df);
+                            cargarDgv(f.LDetalle);
+                            txbTotal.Text = "$ " + f.Calcular_Total();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El producto que desea agregar ya está en la lista", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                }
+                    else
+                    {
+                        MessageBox.Show("El Stock no puede cubrir la cantidad solicitada de este Producto.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+            }
                 else
                 {
-                    MessageBox.Show("El producto que desea agregar ya está en la lista", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Debe cargar una cantidad", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

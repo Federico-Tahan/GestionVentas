@@ -44,9 +44,11 @@
     <Compile Include="Implementacion\Inmp_Cbo.cs" />
     <Compile Include="Implementacion\Inmp_CrudProductos.cs" />
     <Compile Include="Implementacion\Inmp_CrudUsuario.cs" />
+    <Compile Include="Implementacion\Inmp_Factura.cs" />
     <Compile Include="Interfaz\In_Cbos.cs" />
     <Compile Include="Interfaz\In_CrudProductos.cs" />
     <Compile Include="Interfaz\In_CrudUsuario.cs" />
+    <Compile Include="Interfaz\In_Factura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
