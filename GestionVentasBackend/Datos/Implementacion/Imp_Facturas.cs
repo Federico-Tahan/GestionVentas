@@ -76,7 +76,82 @@ namespace GestionVentasBackend.Datos.Implementacion
 
         public bool BajaFactura(Factura f)
         {
-            throw new NotImplementedException();
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+            HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_factura", f.id_factura);
+            HelperDB.ObtenerInstancia().updatear_db("SP_CacelarVenta");
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+            return true;
+        }
+        public bool BajaDetalleFactura(Factura f)
+        {
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+            HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_factura", f.id_factura);
+            HelperDB.ObtenerInstancia().updatear_db("SP_CacelarDetalle");
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+            return true;
+        }
+
+        public bool ModificarFactura(Factura f)
+        {
+            if (BajaDetalleFactura(f))
+            {
+                bool bandera = false;
+                SqlConnection conn = HelperDB.ObtenerInstancia().conexion();
+                SqlTransaction tr = null;
+                try
+                {
+                    HelperDB.ObtenerInstancia().open();
+                    tr = conn.BeginTransaction();
+                    HelperDB.ObtenerInstancia().Command.Transaction = tr;
+                    HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                    HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_factura", f.id_factura);
+                    HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_formapago", f.fp.id_formapago);
+                    HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", f.c.Nombre);
+                    HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@apellido", f.c.Apellido);
+                    HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_cliente", f.c.DNI);
+                    HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_usuario", 22);
+                    HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@monto_pagado", f.monto_pagado);
+                    HelperDB.ObtenerInstancia().Command.CommandText = "SP_ModficarVenta";
+                    HelperDB.ObtenerInstancia().Command.ExecuteNonQuery();
+
+                    HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+
+                    for (int i = 0; i < f.LDetalle.Count; i++)
+                    {
+                        HelperDB.ObtenerInstancia().Command.Transaction = tr;
+
+                        HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_factura", f.id_factura);
+                        HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_producto", f.LDetalle[i].prod.Id_Producto);
+                        HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@cantidad", f.LDetalle[i].Cantidad);
+                        HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@precio", f.LDetalle[i].Precio);
+                        HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@descuento", f.LDetalle[i].Descuento);
+
+                        HelperDB.ObtenerInstancia().Command.CommandText = "SP_AltaDetalle";
+                        HelperDB.ObtenerInstancia().Command.ExecuteNonQuery();
+                        HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                    }
+                    tr.Commit();
+                    bandera = true;
+                }
+                catch (Exception)
+                {
+                    tr.Rollback();
+                    bandera = false;
+                }
+                finally
+                {
+                    if (conn != null && conn.State == ConnectionState.Open)
+                    {
+                        HelperDB.ObtenerInstancia().close();
+                    }
+                }
+                return bandera;
+
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<DetalleFactura> TraerDetalleFacturas(int factura)

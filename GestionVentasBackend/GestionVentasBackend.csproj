@@ -43,10 +43,12 @@
   <ItemGroup>
     <Compile Include="Datos\HelperDB.cs" />
     <Compile Include="Datos\Implementacion\Imp_Cbos.cs" />
+    <Compile Include="Datos\Implementacion\Imp_Cliente.cs" />
     <Compile Include="Datos\Implementacion\Imp_CrudProducto.cs" />
     <Compile Include="Datos\Implementacion\Imp_CrudUsuario.cs" />
     <Compile Include="Datos\Implementacion\Imp_Facturas.cs" />
     <Compile Include="Datos\Interfaz\iCbos.cs" />
+    <Compile Include="Datos\Interfaz\ICrudCliente.cs" />
     <Compile Include="Datos\Interfaz\ICrudProducto.cs" />
     <Compile Include="Datos\Interfaz\ICrudUsuarios.cs" />
     <Compile Include="Datos\Interfaz\IFactura.cs" />

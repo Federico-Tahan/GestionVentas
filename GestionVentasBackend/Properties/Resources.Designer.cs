@@ -61,7 +61,7 @@ namespace GestionVentasBackend.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=.;Initial Catalog=PoliRubro;Integrated Security=True;Encrypt=false.
+        ///   Looks up a localized string similar to Data Source=.;Initial Catalog=PoliRubro;Integrated Security=True;Encrypt=false;.
         /// </summary>
         internal static string Connection {
             get {

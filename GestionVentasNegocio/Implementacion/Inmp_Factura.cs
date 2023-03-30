@@ -27,7 +27,12 @@ namespace GestionVentasNegocio.Implementacion
 
         public bool BajaFactura(Factura f)
         {
-            throw new NotImplementedException();
+            return lg.BajaFactura(f);
+        }
+
+        public bool ModificarFactura(Factura f)
+        {
+            return lg.ModificarFactura(f);
         }
 
         public List<DetalleFactura> TraerDetalleFacturas(int factura)

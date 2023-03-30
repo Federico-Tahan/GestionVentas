@@ -43,15 +43,19 @@ namespace GestionVentasBackend.Dominio
             decimal Total = 0;
             foreach (DetalleFactura item in LDetalle)
             {
-                Total += item.Precio * item.Cantidad;
-                if (item.Descuento > 0)
+                decimal subtotal = item.Cantidad * item.Precio;
+                if (item.Descuento != 100 && item.Descuento > 0 && item.Descuento < 100)
                 {
-                    Total = Total - (Total * item.Descuento) / 100;
+                    subtotal = subtotal -(subtotal * item.Descuento) / 100;
                 }
+                else if (item.Descuento ==100)
+                {
+                    subtotal = 0;
+                }
+                Total += subtotal;
             }
-
             return Math.Round(Total, 2);
         }
-
     }
+
 }

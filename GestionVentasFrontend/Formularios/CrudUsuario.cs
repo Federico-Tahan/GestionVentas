@@ -189,6 +189,11 @@ namespace GestionVentasFrontend.Formularios
                 MessageBox.Show("Debe Cargar la Contraseña del Usuario ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if (cboLocalidad.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Cargar la Localidad ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 

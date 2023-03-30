@@ -129,13 +129,26 @@ namespace GestionVentasFrontend.Formularios.Venta
 
                         abstraerFactura();
 
-
-                        if (lf.AltaFactura(fac))
+                        if (fac.id_factura != 0)
                         {
-                            MessageBox.Show("Factura dada de alta con Exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.DialogResult= DialogResult.OK;
-                            this. Close();
+                            if (lf.ModificarFactura(fac))
+                            {
+                                MessageBox.Show("Factura Modoficada con Exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
                         }
+                        else
+                        {
+                            if (lf.AltaFactura(fac))
+                            {
+                                MessageBox.Show("Factura dada de alta con Exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                        }
+
+                       
 
 
 

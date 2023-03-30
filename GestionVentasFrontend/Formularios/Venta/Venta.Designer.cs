@@ -249,6 +249,7 @@
             // 
             // cboMarca
             // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(201, 102);
@@ -259,6 +260,7 @@
             // 
             // cborubro
             // 
+            this.cborubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cborubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cborubro.FormattingEnabled = true;
             this.cborubro.Location = new System.Drawing.Point(30, 102);

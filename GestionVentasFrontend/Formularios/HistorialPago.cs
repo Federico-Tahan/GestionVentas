@@ -16,5 +16,10 @@ namespace GestionVentasFrontend.Formularios
         {
             InitializeComponent();
         }
+
+        private void HistorialPago_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

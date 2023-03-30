@@ -14,6 +14,7 @@ namespace GestionVentasNegocio.Interfaz
         bool BajaFactura(Factura f);
         List<Factura> TraerFacturas();
         List<DetalleFactura> TraerDetalleFacturas(int factura);
+        bool ModificarFactura(Factura f);
 
     }
 }

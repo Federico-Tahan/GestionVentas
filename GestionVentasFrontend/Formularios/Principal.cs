@@ -62,6 +62,7 @@ namespace GestionVentasFrontend
 
         private void BtnCliente_Click(object sender, EventArgs e)
         {
+            AbrirFormEnPanel(new CrudCliente());
 
         }
 
