@@ -103,9 +103,9 @@ create table HistorialPagoCliente(
 id_pago int identity(1,1),
 DNI bigint,
 monto money,
-fecha datetime
-constraint pk_id_pago primary key (id_pago),
-constraint fk_id_cliente foreign key (DNI) references Cliente(DNI)
+fecha datetime,
+Baja_Logica int
+constraint pk_id_pago primary key (id_pago)
 )
 
 create table FormaDePago(

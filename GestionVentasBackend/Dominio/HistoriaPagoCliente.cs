@@ -12,5 +12,6 @@ namespace GestionVentasBackend.Dominio
         public Cliente client { get; set; }
         public decimal Monto { get; set; }
         public DateTime Fecha { get; set; }
+        public int Baja_Logica { get; set; }
     }
 }

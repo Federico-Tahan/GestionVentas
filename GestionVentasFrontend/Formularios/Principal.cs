@@ -68,6 +68,7 @@ namespace GestionVentasFrontend
 
         private void BtnHistorialPago_Click(object sender, EventArgs e)
         {
+            AbrirFormEnPanel(new HistorialPago());
 
         }
 
