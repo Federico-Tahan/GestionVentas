@@ -16,9 +16,7 @@ namespace GestionVentasFrontend.Formularios.Extra
         public string NombreNegocio { get; set; }
         public string CUIT { get; set; }
         public string Direccion { get; set; }
-
         public string Cajero { get; set; }
-
         public string SubTotal { get; set; }
         public string Descuento { get; set; }
         public string Total { get; set; }
@@ -26,22 +24,15 @@ namespace GestionVentasFrontend.Formularios.Extra
         private PrintPreviewDialog vista = new PrintPreviewDialog();
         public List<DetalleFactura> products = new List<DetalleFactura>();
         int Y = 0;
-
         public void Print()
         {
             // Configurar la impresora
             PrintDocument pd = new PrintDocument();
-
             pd.PrinterSettings.PrinterName = pd.DefaultPageSettings.PrinterSettings.PrinterName;
             pd.DefaultPageSettings.PaperSize = new PaperSize("Ticket", (int)(88 / 25.4 * 100), CalcularTamaño() + 120);
             pd.PrintPage += new PrintPageEventHandler(PrintPage);
-
             vista.Document = pd;
             vista.Show();
-
-
-
-
             // Imprimir el ticket
         }
 
@@ -120,7 +111,7 @@ namespace GestionVentasFrontend.Formularios.Extra
                     Y -= 40;
                     Y += 20;
                     graphics.DrawString("$" + products[i].Precio, font, new SolidBrush(Color.Black), 200, Y);
-                    graphics.DrawString("$" + products[i].Precio * products[i].Cantidad, font, new SolidBrush(Color.Black), 270, Y);
+                    graphics.DrawString("$" + (products[i].Precio * products[i].Cantidad -(((products[i].Precio * products[i].Cantidad)* products[i].Descuento)/100)), font, new SolidBrush(Color.Black), 270, Y);
                     Y += 20;
 
 
@@ -131,7 +122,7 @@ namespace GestionVentasFrontend.Formularios.Extra
                     nombre += "(%" + products[i].Descuento.ToString() + ")";
                     graphics.DrawString(nombre, font, new SolidBrush(Color.Black), 44, Y);
                     graphics.DrawString("$" + products[i].Precio, font, new SolidBrush(Color.Black), 200, Y);
-                    graphics.DrawString("$" + products[i].Precio * products[i].Cantidad, font, new SolidBrush(Color.Black), 270, Y);
+                    graphics.DrawString("$" + (products[i].Precio * products[i].Cantidad - (((products[i].Precio * products[i].Cantidad) * products[i].Descuento) / 100)), font, new SolidBrush(Color.Black), 270, Y);
                 }
 
 
@@ -148,17 +139,11 @@ namespace GestionVentasFrontend.Formularios.Extra
             graphics.DrawString("SubTotal: $" + SubTotal, font, new SolidBrush(Color.Black), 0, Y);
             Y += 20;
 
-            graphics.DrawString("Descuento: %" + Descuento, font, new SolidBrush(Color.Black), 0, Y);
-            Y += 20;
-
             graphics.DrawString("Total: $" + Total, font, new SolidBrush(Color.Black), 0, Y);
             Y += 20;
 
             graphics.DrawString("Gracias por su Compra!", font, new SolidBrush(Color.Black), 100, Y);
         }
-
-
-
         private int CalcularTamaño()
         {
             int altura = 120; // Altura inicial del ticket
@@ -181,10 +166,4 @@ namespace GestionVentasFrontend.Formularios.Extra
             return altura;
         }
     }
-
-
-
-
-
-
 }

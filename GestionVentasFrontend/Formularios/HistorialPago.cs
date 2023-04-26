@@ -113,7 +113,7 @@ namespace GestionVentasFrontend.Formularios
             {
                 return;
             }
-            if (cboDNI.SelectedIndex == 0)
+            if (cboDNI.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar la cuenta de un cliente para continuar.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -167,7 +167,6 @@ namespace GestionVentasFrontend.Formularios
                 txbNombre.Enabled = false;
                 nupDebe.Enabled = false;
                 nupPrecio.Enabled = false;
-                PicLimpiar.Enabled = false;
                 BtnCancelarPago.Enabled = HistSelected.Baja_Logica == 0 ? true:false;
 
 
@@ -221,7 +220,7 @@ namespace GestionVentasFrontend.Formularios
                 MessageBox.Show("El monto que está entregando es mayor a la deuda del cliente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-            if (cboDNI.SelectedIndex == 0)
+            if (cboDNI.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar la cuenta de un cliente para continuar.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;

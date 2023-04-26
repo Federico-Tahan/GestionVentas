@@ -17,7 +17,8 @@ namespace GestionVentasFrontend.Formularios.Venta
     {
         In_Cbos lc;
         In_Factura lf;
-
+        In_CrudCliente cl;
+        
         Factura fac = new Factura();
         Cliente cli = new Cliente();
         Usuario u = new Usuario();
@@ -28,15 +29,21 @@ namespace GestionVentasFrontend.Formularios.Venta
             fac = f;
             lc = new Inmp_Cbo();
             lf = new Inmp_Factura();
+            cl = new Inmp_CrudCliente();
 
 
         }
 
         private void ConfirmarVenta_Load(object sender, EventArgs e)
         {
+            
             cargar_cbo(cborFormaPago, "Formapago", "id_formapago", lc.ObtenerFormaPago(0));
+            cborFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
             txbtotal.Text = fac.Calcular_Total().ToString();
-
+            txtVuelto.Text = "-" + fac.Calcular_Total();
+            cargar_cbo(cboDNI, "DNI", "DNI", cl.TrarClientes());
+            txbNombre.Text = string.Empty;
+            txbApellido.Text= string.Empty;
         }
 
         private void cargar_cbo<T>(ComboBox cbo, string display, string value, List<T> lista)
@@ -44,37 +51,21 @@ namespace GestionVentasFrontend.Formularios.Venta
             cbo.DataSource = lista;
             cbo.DisplayMember = display;
             cbo.ValueMember = value;
-            cbo.DropDownStyle= ComboBoxStyle.DropDownList;
             cbo.SelectedIndex = -1;
         }
 
-        private void chkFiado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkFiado.Checked)
-            {
-                BtnBuscarCliente.Visible = true;
-                txbCliente.Visible = true;
-                cborFormaPago.SelectedValue =1;
-            }
-            else
-            {
-                BtnBuscarCliente.Visible = false;
-                txbCliente.Visible = false;
-                cborFormaPago.SelectedIndex = - 1;
-            }
-        }
 
         private void cborFormaPago_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if ((int)cborFormaPago.SelectedValue == 1)
             {
-                BtnBuscarCliente.Visible = true;
-                txbCliente.Visible = true;
+                cboDNI.Visible = true;
+                lbdni.Visible = true;
             }
             else
             {
-                BtnBuscarCliente.Visible = false;
-                txbCliente.Visible = false;
+                cboDNI.Visible = false;
+                lbdni.Visible = false;
             }
         }
 
@@ -113,72 +104,60 @@ namespace GestionVentasFrontend.Formularios.Venta
         {
             if (cborFormaPago.SelectedIndex != -1)
             {
+                                                                                        
 
-
-                if ((int)cborFormaPago.SelectedValue == 1)
+                if ((int)cborFormaPago.SelectedValue != 1 && Math.Round(Convert.ToDecimal(txtAbona.Text), 2)  -  Math.Round(Convert.ToDecimal(txbtotal.Text),2) <0)
                 {
+                    MessageBox.Show("El monto ingresado no es suficiente para cubrir la venta", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
 
+                if ((int)cborFormaPago.SelectedValue == 1 && cboDNI.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Para vender al fiado es necesario que ingrese la cuenta de un Cliente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
+                if (txtAbona.Text == string.Empty)
+                {
+                    MessageBox.Show("Debe ingresar el valor que abona el cliente.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (MessageBox.Show("Desea Generar la venta?", "Informacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return;
+                }
+                abstraerFactura();
+
+                if ((int)cborFormaPago.SelectedValue == 1 && cboDNI.SelectedIndex != -1)
+                {
+                    fac.c = (Cliente)cboDNI.SelectedItem;
+                }
+
+                if (fac.id_factura != 0)
+                {
+                    if (lf.ModificarFactura(fac))
+                    {
+                        MessageBox.Show("Factura Modoficada con Exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    if (txtAbona.Text != string.Empty && Convert.ToDecimal(txtVuelto.Text) >= 0)
+                    if (lf.AltaFactura(fac))
                     {
-
-
-                        abstraerFactura();
-
-                        if (fac.id_factura != 0)
-                        {
-                            if (lf.ModificarFactura(fac))
-                            {
-                                MessageBox.Show("Factura Modoficada con Exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.DialogResult = DialogResult.OK;
-                                this.Close();
-                            }
-                        }
-                        else
-                        {
-                            if (lf.AltaFactura(fac))
-                            {
-                                MessageBox.Show("Factura dada de alta con Exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.DialogResult = DialogResult.OK;
-                                this.Close();
-                            }
-                        }
-
-                       
-
-
-
+                        MessageBox.Show("Factura dada de alta con Exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
                     }
-                    else
-                    {
-                        MessageBox.Show("El valor que abona el Cliente es insuficiente para cubrir la Venta","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
-                    }
-
-
                 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            }
+            else
+            {
+                MessageBox.Show("Debe cargar la forma de pago.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -188,6 +167,7 @@ namespace GestionVentasFrontend.Formularios.Venta
             u = new Usuario();
             fp = new FormaPago();
             cli = new Cliente();
+            u.Id_Usuario = Login.usuario.Id_Usuario;
             fac.user = u;
             fac.fp = fp;
             fac.c = cli;
@@ -195,6 +175,33 @@ namespace GestionVentasFrontend.Formularios.Venta
             fac.c.Apellido = txbApellido.Text;
             fac.c.Nombre = txbNombre.Text;
             fac.monto_pagado = Math.Round(Convert.ToDecimal(txtAbona.Text),2);
+        }
+
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboDNI_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cboDNI.SelectedIndex != -1)
+            {
+                cli = (Cliente)cboDNI.SelectedItem;
+                txbNombre.Text = cli.Nombre;
+                txbApellido.Text = cli.Apellido;
+
+            }
+        }
+
+        private void cboDNI_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cboDNI.SelectedIndex != -1)
+            {
+                cli = (Cliente)cboDNI.SelectedItem;
+                txbNombre.Text = cli.Nombre;
+                txbApellido.Text = cli.Apellido;
+
+            }
         }
     }
 }

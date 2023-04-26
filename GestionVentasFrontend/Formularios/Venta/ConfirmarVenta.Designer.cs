@@ -34,7 +34,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.chkFiado = new System.Windows.Forms.CheckBox();
             this.lbnombre = new System.Windows.Forms.Label();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.lbapelldio = new System.Windows.Forms.Label();
@@ -46,9 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.BtnConfirmar = new System.Windows.Forms.Button();
-            this.BtnBuscarCliente = new System.Windows.Forms.Button();
-            this.txbCliente = new System.Windows.Forms.TextBox();
             this.lbdni = new System.Windows.Forms.Label();
+            this.cboDNI = new System.Windows.Forms.ComboBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -122,21 +120,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // chkFiado
-            // 
-            this.chkFiado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkFiado.AutoSize = true;
-            this.chkFiado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkFiado.ForeColor = System.Drawing.Color.AliceBlue;
-            this.chkFiado.Location = new System.Drawing.Point(345, 14);
-            this.chkFiado.Name = "chkFiado";
-            this.chkFiado.Size = new System.Drawing.Size(73, 24);
-            this.chkFiado.TabIndex = 49;
-            this.chkFiado.Text = "Fiado";
-            this.chkFiado.UseVisualStyleBackColor = true;
-            this.chkFiado.Visible = false;
-            this.chkFiado.CheckedChanged += new System.EventHandler(this.chkFiado_CheckedChanged);
-            // 
             // lbnombre
             // 
             this.lbnombre.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -199,6 +182,8 @@
             this.txtAbona.Name = "txtAbona";
             this.txtAbona.Size = new System.Drawing.Size(120, 26);
             this.txtAbona.TabIndex = 55;
+            this.txtAbona.Text = "0";
+            this.txtAbona.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtAbona.TextChanged += new System.EventHandler(this.txtAbona_TextChanged);
             this.txtAbona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbona_KeyPress);
             // 
@@ -264,36 +249,6 @@
             this.BtnConfirmar.UseVisualStyleBackColor = false;
             this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
-            // BtnBuscarCliente
-            // 
-            this.BtnBuscarCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnBuscarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.BtnBuscarCliente.BackgroundImage = global::GestionVentasFrontend.Properties.Resources.busqueda;
-            this.BtnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscarCliente.FlatAppearance.BorderSize = 0;
-            this.BtnBuscarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
-            this.BtnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnBuscarCliente.Location = new System.Drawing.Point(187, 149);
-            this.BtnBuscarCliente.Name = "BtnBuscarCliente";
-            this.BtnBuscarCliente.Size = new System.Drawing.Size(27, 30);
-            this.BtnBuscarCliente.TabIndex = 54;
-            this.BtnBuscarCliente.UseVisualStyleBackColor = false;
-            this.BtnBuscarCliente.Visible = false;
-            // 
-            // txbCliente
-            // 
-            this.txbCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txbCliente.Enabled = false;
-            this.txbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCliente.Location = new System.Drawing.Point(544, 9);
-            this.txbCliente.Name = "txbCliente";
-            this.txbCliente.Size = new System.Drawing.Size(134, 26);
-            this.txbCliente.TabIndex = 62;
-            this.txbCliente.Visible = false;
-            // 
             // lbdni
             // 
             this.lbdni.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -305,15 +260,31 @@
             this.lbdni.Size = new System.Drawing.Size(36, 19);
             this.lbdni.TabIndex = 63;
             this.lbdni.Text = "DNI";
+            this.lbdni.Visible = false;
+            // 
+            // cboDNI
+            // 
+            this.cboDNI.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboDNI.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboDNI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDNI.FormattingEnabled = true;
+            this.cboDNI.Location = new System.Drawing.Point(540, 9);
+            this.cboDNI.Name = "cboDNI";
+            this.cboDNI.Size = new System.Drawing.Size(130, 28);
+            this.cboDNI.TabIndex = 64;
+            this.cboDNI.Visible = false;
+            this.cboDNI.SelectionChangeCommitted += new System.EventHandler(this.cboDNI_SelectionChangeCommitted);
+            this.cboDNI.SelectedValueChanged += new System.EventHandler(this.cboDNI_SelectedValueChanged);
             // 
             // ConfirmarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(133)))), ((int)(((byte)(151)))));
             this.ClientSize = new System.Drawing.Size(682, 426);
+            this.Controls.Add(this.cboDNI);
             this.Controls.Add(this.lbdni);
-            this.Controls.Add(this.txbCliente);
             this.Controls.Add(this.BtnConfirmar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtVuelto);
@@ -321,12 +292,10 @@
             this.Controls.Add(this.txbtotal);
             this.Controls.Add(this.lbAbona);
             this.Controls.Add(this.txtAbona);
-            this.Controls.Add(this.BtnBuscarCliente);
             this.Controls.Add(this.lbapelldio);
             this.Controls.Add(this.txbApellido);
             this.Controls.Add(this.lbnombre);
             this.Controls.Add(this.txbNombre);
-            this.Controls.Add(this.chkFiado);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbFormaPago);
@@ -354,12 +323,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.CheckBox chkFiado;
         private System.Windows.Forms.Label lbnombre;
         private System.Windows.Forms.TextBox txbNombre;
         private System.Windows.Forms.Label lbapelldio;
         private System.Windows.Forms.TextBox txbApellido;
-        private System.Windows.Forms.Button BtnBuscarCliente;
         private System.Windows.Forms.Label lbAbona;
         private System.Windows.Forms.TextBox txtAbona;
         private System.Windows.Forms.Label lbTotal;
@@ -367,7 +334,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtVuelto;
         private System.Windows.Forms.Button BtnConfirmar;
-        private System.Windows.Forms.TextBox txbCliente;
         private System.Windows.Forms.Label lbdni;
+        private System.Windows.Forms.ComboBox cboDNI;
     }
 }

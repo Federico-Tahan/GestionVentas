@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using GestionVentasFrontend.Formularios.Extra;
 using System.Text.RegularExpressions;
 using System.Collections;
+using System.IO;
 
 namespace GestionVentasFrontend.Formularios.Venta
 {
@@ -20,6 +21,7 @@ namespace GestionVentasFrontend.Formularios.Venta
     {
         In_Factura lf;
         In_Cbos lc;
+        ing_Configuracion lg = new ng_Configuracion();
         List<Factura> lFacturas = new List<Factura>();
         Factura FacSelected = new Factura();
         List<Producto> productosON = new List<Producto>();
@@ -27,7 +29,7 @@ namespace GestionVentasFrontend.Formularios.Venta
         Producto prodaAgregar = new Producto();
         DetalleFactura df = new DetalleFactura();
         Factura nuevaFactura = new Factura();
-
+        Config con = new Config();
         public ConsultarVentas()
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace GestionVentasFrontend.Formularios.Venta
 
         private void ConsultarVentas_Load(object sender, EventArgs e)
         {
+            con = lg.TraerConfig();
             lFacturas = lf.TraerFacturas();
             CargarDGV(lFacturas);
         }
@@ -94,13 +97,30 @@ namespace GestionVentasFrontend.Formularios.Venta
                 PrintTicket t = new PrintTicket();
                 FacSelected.id_factura = (int)DgvFacturas.CurrentRow.Cells[0].Value;
                 CargarFacturaSeleccionado(FacSelected.id_factura);
-
+                if (con.Imagen.Length != 0)
+                {
+                    t.Logo = Convertir_Bytes_A_Imagen(con.Imagen);
+                }
+                t.Cajero = FacSelected.user.Emp.Nombre + " " + FacSelected.user.Emp.Apellido;
+                t.Direccion = con.Direccion;
+                t.CUIT = con.CUIT;
+                t.NombreNegocio = con.Nombre;
+                t.SubTotal = FacSelected.Calcular_Subtotal().ToString();
+                t.Total = FacSelected.Calcular_Total().ToString();
                 t.products = FacSelected.LDetalle;
                 t.Print();
                 FacSelected = new Factura();
             }
         }
-
+        private Image Convertir_Bytes_A_Imagen(byte[] bytes)
+        {
+            Image imagen;
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                imagen = Image.FromStream(ms);
+            }
+            return imagen;
+        }
         private void CargarFacturaSeleccionado(int id_Fac)
         {
             foreach (Factura u in lFacturas)

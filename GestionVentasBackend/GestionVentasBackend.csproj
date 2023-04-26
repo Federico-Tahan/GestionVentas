@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,13 +49,27 @@
     <Compile Include="Datos\Implementacion\Imp_CrudUsuario.cs" />
     <Compile Include="Datos\Implementacion\Imp_Facturas.cs" />
     <Compile Include="Datos\Implementacion\Imp_HistorialPago.cs" />
+    <Compile Include="Datos\Implementacion\Imp_Login.cs" />
+    <Compile Include="Datos\Implementacion\Imp_RecaudadoHoy.cs" />
+    <Compile Include="Datos\Implementacion\Imp_Reportes.cs" />
+    <Compile Include="Datos\Implementacion\Im_Configuracion.cs" />
     <Compile Include="Datos\Interfaz\iCbos.cs" />
+    <Compile Include="Datos\Interfaz\IConfiguracion.cs" />
     <Compile Include="Datos\Interfaz\ICrudCliente.cs" />
     <Compile Include="Datos\Interfaz\ICrudProducto.cs" />
     <Compile Include="Datos\Interfaz\ICrudUsuarios.cs" />
     <Compile Include="Datos\Interfaz\IFactura.cs" />
     <Compile Include="Datos\Interfaz\IHistorialPago.cs" />
+    <Compile Include="Datos\Interfaz\IInfoPrincipal.cs" />
+    <Compile Include="Datos\Interfaz\ILogin.cs" />
+    <Compile Include="Datos\Interfaz\IReportes.cs" />
+    <Compile Include="Dominio\ClasesReportes\DeudaCliente.cs" />
+    <Compile Include="Dominio\ClasesReportes\GeneradoXMarca.cs" />
+    <Compile Include="Dominio\ClasesReportes\GeneradoxRubro.cs" />
+    <Compile Include="Dominio\ClasesReportes\RecaudadoFP.cs" />
+    <Compile Include="Dominio\ClasesReportes\TOP10PRODUCTOS.cs" />
     <Compile Include="Dominio\Cliente.cs" />
+    <Compile Include="Dominio\Config.cs" />
     <Compile Include="Dominio\DetalleFactura.cs" />
     <Compile Include="Dominio\Empleado.cs" />
     <Compile Include="Dominio\Encriptacion.cs" />

@@ -1,5 +1,9 @@
-﻿using GestionVentasFrontend.Formularios;
+﻿using GestionVentasBackend.Dominio.ClasesReportes;
+using GestionVentasFrontend.Formularios;
+using GestionVentasFrontend.Formularios.Reportes;
 using GestionVentasFrontend.Formularios.Venta;
+using GestionVentasNegocio.Implementacion;
+using GestionVentasNegocio.Interfaz;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +18,9 @@ namespace GestionVentasFrontend
 {
     public partial class Principal : Form
     {
-                Form FormActual;
+        Form FormActual;
 
+        Ing_Inforprincipal lg = new ing_InfoPrincipal();
         public Principal()
         {
             InitializeComponent();
@@ -32,11 +37,23 @@ namespace GestionVentasFrontend
         {
             lbhora.Text = DateTime.Now.ToLongTimeString();
             lbfecha.Text = DateTime.Now.ToString("dddd MMMM  yyyy");
+            lbRecaudadoHoy.Text = lg.RecaudadoHoy().ToString();
+            VentasdelDia.Text = lg.VentasDelDia().ToString();
+            lbVentasdelMes.Text = lg.VentasDelMES().ToString();
+
         }
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.lg.Close();
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Program.lg.Close();
+            }
+            else
+            {
+                // El formulario se está cerrando por otra razón (por ejemplo, mediante código)
+                // No hagas nada aquí
+            }
         }
         public void AbrirFormEnPanel(Form Formhijo)
         {
@@ -118,6 +135,31 @@ namespace GestionVentasFrontend
         {
             AbrirFormEnPanel(new ConsultarVentas());
 
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ReportesForm());
+
+        }
+
+        private void picConfiguracion_Click(object sender, EventArgs e)
+        {
+            Configuracion c = new Configuracion();
+            c.ShowDialog();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            lbUsuario.Text = Login.usuario.Emp.Nombre + " " + Login.usuario.Emp.Apellido;
+            
+        }
+
+        private void lbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Program.lg.Show();
+            Login.usuario = new GestionVentasBackend.Dominio.Usuario();
         }
     }
 }

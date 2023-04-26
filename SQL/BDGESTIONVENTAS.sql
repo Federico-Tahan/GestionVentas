@@ -155,3 +155,13 @@ constraint pk_idbitacora primary key (id_bitacora),
 constraint fk_idusuario foreign key (id_usuario) references usuarios(id_usuario)
 )
 
+
+
+create table Configuracion(
+CUIT varchar(13),
+Logo Image,
+NombreEmpresa varchar(50),
+direccion varchar(200),
+Licencia varchar(200)
+
+)

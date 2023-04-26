@@ -28,19 +28,27 @@ namespace GestionVentasBackend.Dominio
 
         public string Desencriptar(string contraseñaEn)
         {
-            string h = "PizzeriaFormaggiolasmejoresdelplaneta";
-            byte[] datos = Convert.FromBase64String(contraseñaEn);
+            try
+            {
+                string h = "PizzeriaFormaggiolasmejoresdelplaneta";
+                byte[] datos = Convert.FromBase64String(contraseñaEn);
 
-            MD5 mD5 = MD5.Create();
-            TripleDES tripleDES = TripleDES.Create();
+                MD5 mD5 = MD5.Create();
+                TripleDES tripleDES = TripleDES.Create();
 
-            tripleDES.Key = mD5.ComputeHash(UTF8Encoding.UTF8.GetBytes(h));
-            tripleDES.Mode = CipherMode.ECB;
+                tripleDES.Key = mD5.ComputeHash(UTF8Encoding.UTF8.GetBytes(h));
+                tripleDES.Mode = CipherMode.ECB;
 
-            ICryptoTransform transform = tripleDES.CreateDecryptor();
-            byte[] resultado = transform.TransformFinalBlock(datos, 0, datos.Length);
+                ICryptoTransform transform = tripleDES.CreateDecryptor();
+                byte[] resultado = transform.TransformFinalBlock(datos, 0, datos.Length);
 
-            return UTF8Encoding.UTF8.GetString(resultado);
+                return UTF8Encoding.UTF8.GetString(resultado);
+            }
+            catch(Exception)
+            {
+                return "si";
+            }
+
         }
     }
 }

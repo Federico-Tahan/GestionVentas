@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvHistPago = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +42,6 @@
             this.BtnCancelarPago = new System.Windows.Forms.Button();
             this.BtnNuevo = new System.Windows.Forms.Button();
             this.pnlForm = new System.Windows.Forms.Panel();
-            this.PicLimpiar = new System.Windows.Forms.PictureBox();
             this.PicBajar = new System.Windows.Forms.PictureBox();
             this.cboDNI = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicLimpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBajar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDebe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).BeginInit();
@@ -81,14 +79,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvHistPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvHistPago.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvHistPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvHistPago.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.DgvHistPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvHistPago.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_pago,
@@ -102,8 +100,8 @@
             this.DgvHistPago.Name = "DgvHistPago";
             this.DgvHistPago.ReadOnly = true;
             this.DgvHistPago.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvHistPago.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvHistPago.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.DgvHistPago.Size = new System.Drawing.Size(965, 419);
             this.DgvHistPago.TabIndex = 7;
             this.DgvHistPago.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvHistPago_CellContentClick);
@@ -222,7 +220,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.pnlForm.Controls.Add(this.PicLimpiar);
             this.pnlForm.Controls.Add(this.PicBajar);
             this.pnlForm.Controls.Add(this.cboDNI);
             this.pnlForm.Controls.Add(this.label8);
@@ -241,19 +238,6 @@
             this.pnlForm.Size = new System.Drawing.Size(965, 471);
             this.pnlForm.TabIndex = 22;
             this.pnlForm.Visible = false;
-            // 
-            // PicLimpiar
-            // 
-            this.PicLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PicLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PicLimpiar.Image = global::GestionVentasFrontend.Properties.Resources.limpieza_de_datos;
-            this.PicLimpiar.Location = new System.Drawing.Point(844, 3);
-            this.PicLimpiar.Name = "PicLimpiar";
-            this.PicLimpiar.Size = new System.Drawing.Size(56, 48);
-            this.PicLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PicLimpiar.TabIndex = 63;
-            this.PicLimpiar.TabStop = false;
-            this.PicLimpiar.Click += new System.EventHandler(this.PicLimpiar_Click);
             // 
             // PicBajar
             // 
@@ -346,10 +330,20 @@
             232,
             0,
             0});
+            this.nupDebe.Minimum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            -2147483648});
             this.nupDebe.Name = "nupDebe";
             this.nupDebe.Size = new System.Drawing.Size(112, 26);
             this.nupDebe.TabIndex = 54;
             this.nupDebe.ThousandsSeparator = true;
+            this.nupDebe.Value = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             // 
             // label6
             // 
@@ -429,24 +423,24 @@
             // 
             // FechaPago
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.FechaPago.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FechaPago.DefaultCellStyle = dataGridViewCellStyle17;
             this.FechaPago.HeaderText = "Fecha Pago";
             this.FechaPago.Name = "FechaPago";
             this.FechaPago.ReadOnly = true;
             // 
             // Monto
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Monto.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Monto.DefaultCellStyle = dataGridViewCellStyle18;
             this.Monto.HeaderText = "Monto de pago";
             this.Monto.Name = "Monto";
             this.Monto.ReadOnly = true;
             // 
             // Estado
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Estado.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle19;
             this.Estado.FillWeight = 80F;
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
@@ -485,7 +479,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicLimpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBajar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDebe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).EndInit();
@@ -517,7 +510,6 @@
         private System.Windows.Forms.NumericUpDown nupPrecio;
         private System.Windows.Forms.ComboBox cboDNI;
         private System.Windows.Forms.PictureBox PicBajar;
-        private System.Windows.Forms.PictureBox PicLimpiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaPago;

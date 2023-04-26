@@ -27,7 +27,7 @@ namespace GestionVentasBackend.Datos.Implementacion
                 HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", f.c.Nombre);
                 HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@apellido", f.c.Apellido);
                 HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_cliente", f.c.DNI);
-                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_usuario", 22);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id_usuario", f.user.Id_Usuario);
                 HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@monto_pagado", f.monto_pagado);
 
 

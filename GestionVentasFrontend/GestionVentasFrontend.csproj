@@ -62,8 +62,27 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +94,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Activacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Activacion.Designer.cs">
+      <DependentUpon>Activacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\CrudCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +124,7 @@
     <Compile Include="Formularios\CrudUsuario.Designer.cs">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Extra\Encriptacion.cs" />
     <Compile Include="Formularios\Extra\Ticket.cs" />
     <Compile Include="Formularios\Extra\UnidadDeMedida.cs">
       <SubType>Form</SubType>
@@ -117,6 +149,47 @@
     </Compile>
     <Compile Include="Formularios\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\DataReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormDuedadeClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormDuedadeClientes.Designer.cs">
+      <DependentUpon>FormDuedadeClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormGananciaXMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormGananciaXMarca.Designer.cs">
+      <DependentUpon>FormGananciaXMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormRecaudacionFP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormRecaudacionFP.Designer.cs">
+      <DependentUpon>FormRecaudacionFP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormReporteTopProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormReporteTopProductos.Designer.cs">
+      <DependentUpon>FormReporteTopProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReporteGananciasXRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReporteGananciasXRubro.Designer.cs">
+      <DependentUpon>ReporteGananciasXRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReportesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\ReportesForm.Designer.cs">
+      <DependentUpon>ReportesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Stock.cs">
       <SubType>Form</SubType>
@@ -144,6 +217,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Formularios\Activacion.resx">
+      <DependentUpon>Activacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CrudCliente.resx">
       <DependentUpon>CrudCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +245,29 @@
     <EmbeddedResource Include="Formularios\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormDuedadeClientes.resx">
+      <DependentUpon>FormDuedadeClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormGananciaXMarca.resx">
+      <DependentUpon>FormGananciaXMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormRecaudacionFP.resx">
+      <DependentUpon>FormRecaudacionFP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormReporteTopProductos.resx">
+      <DependentUpon>FormReporteTopProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\ReportDeudaCliente.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\ReporteGananciasXRubro.resx">
+      <DependentUpon>ReporteGananciasXRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\ReportesForm.resx">
+      <DependentUpon>ReportesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\ReportGananciaXMarca.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\ReportGananciaXRubro.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\ReportRecaudacion.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\ReportTopProductos.rdlc" />
     <EmbeddedResource Include="Formularios\Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +290,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Formularios\Reportes\DataReport.xsc">
+      <DependentUpon>DataReport.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\Reportes\DataReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios\Reportes\DataReport.xss">
+      <DependentUpon>DataReport.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -338,6 +453,43 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\punto-de-venta %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajustes.png" />
+    <None Include="Resources\guardar-datos.png" />
+    <None Include="Resources\apoyo.png" />
+    <None Include="Resources\gestion-del-tiempo.png" />
+    <None Include="Resources\tarjeta-de-identificacion.png" />
+    <None Include="Resources\derechos-de-autor.png" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\llave.png" />
+    <None Include="Resources\image1.png" />
+    <None Include="Resources\Button.png" />
+    <None Include="Resources\Model Button.png" />
+    <None Include="Resources\1000_F_501987255_kb5LZcBmlcz00IejLlxpklpTbJ9ys5i8.jpg" />
+    <None Include="Resources\placeholder.jpg" />
+    <None Include="Resources\lock %282%29.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\lock %281%29.png" />
+    <None Include="Resources\numero-1.png" />
+    <None Include="Resources\numero-2.png" />
+    <None Include="Resources\numero-3.png" />
+    <None Include="Resources\numero-4.png" />
+    <None Include="Resources\numero-5.png" />
+    <None Include="Resources\numero-6.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
