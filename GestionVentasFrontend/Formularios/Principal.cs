@@ -163,6 +163,7 @@ namespace GestionVentasFrontend
         {
             Configuracion c = new Configuracion();
             c.ShowDialog();
+            SeleccionarColor();
         }
 
         private void Principal_Load(object sender, EventArgs e)

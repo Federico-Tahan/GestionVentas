@@ -805,6 +805,7 @@
             this.Name = "Configuracion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuracion";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Configuracion_FormClosed);
             this.Load += new System.EventHandler(this.Configuracion_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlBackup.ResumeLayout(false);

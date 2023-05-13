@@ -215,7 +215,7 @@ namespace GestionVentasFrontend.Formularios
         {
             if (lg.UpdateTema((int)CboTema.SelectedValue)) 
             {
-                MessageBox.Show("Tema actualizado con Exito, Reinicie el programa para visualizar los cambios", "");
+                MessageBox.Show("Tema actualizado con Exito", "");
             }
         }
 
@@ -258,6 +258,11 @@ namespace GestionVentasFrontend.Formularios
         {
             FormFormaPago f = new FormFormaPago();
             f.ShowDialog();
+        }
+
+        private void Configuracion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.DialogResult = DialogResult.Yes;
         }
     }
 }
