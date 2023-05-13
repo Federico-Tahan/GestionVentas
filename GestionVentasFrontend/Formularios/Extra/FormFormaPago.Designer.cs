@@ -33,23 +33,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFormaPago));
             this.pnl = new System.Windows.Forms.Panel();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbnombre = new System.Windows.Forms.Label();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.DgvUnidadMed = new System.Windows.Forms.DataGridView();
+            this.id_localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnNuevo = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.id_localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUnidadMed)).BeginInit();
             this.panel4.SuspendLayout();
@@ -156,6 +157,39 @@
             this.DgvUnidadMed.TabIndex = 36;
             this.DgvUnidadMed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUnidadMed_CellClick);
             // 
+            // id_localidad
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id_localidad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.id_localidad.FillWeight = 80F;
+            this.id_localidad.HeaderText = "Codigo Forma Pago";
+            this.id_localidad.Name = "id_localidad";
+            this.id_localidad.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Activo
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Activo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Activo.FillWeight = 50F;
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            // 
+            // Accion
+            // 
+            this.Accion.FillWeight = 70F;
+            this.Accion.HeaderText = "Accion";
+            this.Accion.Name = "Accion";
+            this.Accion.ReadOnly = true;
+            this.Accion.Text = "Detalle";
+            this.Accion.UseColumnTextForButtonValue = true;
+            // 
             // BtnGuardar
             // 
             this.BtnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -241,6 +275,16 @@
             this.panel4.Size = new System.Drawing.Size(331, 54);
             this.panel4.TabIndex = 31;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.tarjeta_de_credito;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -251,49 +295,6 @@
             this.label1.Size = new System.Drawing.Size(266, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Formas de Pago";
-            // 
-            // id_localidad
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id_localidad.DefaultCellStyle = dataGridViewCellStyle2;
-            this.id_localidad.FillWeight = 80F;
-            this.id_localidad.HeaderText = "Codigo Forma Pago";
-            this.id_localidad.Name = "id_localidad";
-            this.id_localidad.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Activo
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Activo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Activo.FillWeight = 50F;
-            this.Activo.HeaderText = "Activo";
-            this.Activo.Name = "Activo";
-            this.Activo.ReadOnly = true;
-            // 
-            // Accion
-            // 
-            this.Accion.FillWeight = 70F;
-            this.Accion.HeaderText = "Accion";
-            this.Accion.Name = "Accion";
-            this.Accion.ReadOnly = true;
-            this.Accion.Text = "Detalle";
-            this.Accion.UseColumnTextForButtonValue = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.tarjeta_de_credito;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // FormFormaPago
             // 
@@ -308,9 +309,11 @@
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnNuevo);
             this.Controls.Add(this.panel4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormFormaPago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormFormaPago";
+            this.Text = "Forma de Pago";
             this.Load += new System.EventHandler(this.FormFormaPago_Load);
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();

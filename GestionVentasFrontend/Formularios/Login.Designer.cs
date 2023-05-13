@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnlFondo = new System.Windows.Forms.Panel();
+            this.piccontra = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.txbcontraseña = new System.Windows.Forms.TextBox();
             this.txbalias = new System.Windows.Forms.TextBox();
-            this.piccontra = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piccontra)).BeginInit();
@@ -56,6 +57,19 @@
             this.pnlFondo.Name = "pnlFondo";
             this.pnlFondo.Size = new System.Drawing.Size(637, 610);
             this.pnlFondo.TabIndex = 0;
+            // 
+            // piccontra
+            // 
+            this.piccontra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.piccontra.Image = global::GestionVentasFrontend.Properties.Resources.lock__1_;
+            this.piccontra.Location = new System.Drawing.Point(430, 427);
+            this.piccontra.Name = "piccontra";
+            this.piccontra.Size = new System.Drawing.Size(26, 24);
+            this.piccontra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.piccontra.TabIndex = 6;
+            this.piccontra.TabStop = false;
+            this.piccontra.Tag = "cerrado";
+            this.piccontra.Click += new System.EventHandler(this.piccontra_Click);
             // 
             // label2
             // 
@@ -113,19 +127,6 @@
             this.txbalias.Size = new System.Drawing.Size(192, 24);
             this.txbalias.TabIndex = 0;
             // 
-            // piccontra
-            // 
-            this.piccontra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.piccontra.Image = global::GestionVentasFrontend.Properties.Resources.lock__1_;
-            this.piccontra.Location = new System.Drawing.Point(430, 427);
-            this.piccontra.Name = "piccontra";
-            this.piccontra.Size = new System.Drawing.Size(26, 24);
-            this.piccontra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.piccontra.TabIndex = 6;
-            this.piccontra.TabStop = false;
-            this.piccontra.Tag = "cerrado";
-            this.piccontra.Click += new System.EventHandler(this.piccontra_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.LogoLogin;
@@ -143,6 +144,7 @@
             this.ClientSize = new System.Drawing.Size(637, 610);
             this.Controls.Add(this.pnlFondo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

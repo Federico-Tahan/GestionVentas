@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuracion));
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.BtnTemas = new System.Windows.Forms.Button();
@@ -64,6 +65,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pnltema = new System.Windows.Forms.Panel();
             this.pnlIngresoDatos = new System.Windows.Forms.Panel();
+            this.BtnFpago = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.BtnLoc = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BtnUMed = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.BtnMarca = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.BtnRubro = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -73,14 +82,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.BtnMarca = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.BtnUMed = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.BtnLoc = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.BtnFpago = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlBackup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -551,6 +552,126 @@
             this.pnlIngresoDatos.TabIndex = 27;
             this.pnlIngresoDatos.Visible = false;
             // 
+            // BtnFpago
+            // 
+            this.BtnFpago.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BtnFpago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.BtnFpago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnFpago.FlatAppearance.BorderSize = 0;
+            this.BtnFpago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.BtnFpago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFpago.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFpago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnFpago.Location = new System.Drawing.Point(242, 434);
+            this.BtnFpago.Name = "BtnFpago";
+            this.BtnFpago.Size = new System.Drawing.Size(80, 27);
+            this.BtnFpago.TabIndex = 34;
+            this.BtnFpago.Text = "Abrir";
+            this.BtnFpago.UseVisualStyleBackColor = false;
+            this.BtnFpago.Click += new System.EventHandler(this.BtnFpago_Click);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(41, 437);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(189, 19);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Ingreso de Forma Pago";
+            // 
+            // BtnLoc
+            // 
+            this.BtnLoc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BtnLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.BtnLoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLoc.FlatAppearance.BorderSize = 0;
+            this.BtnLoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.BtnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnLoc.Location = new System.Drawing.Point(242, 362);
+            this.BtnLoc.Name = "BtnLoc";
+            this.BtnLoc.Size = new System.Drawing.Size(80, 27);
+            this.BtnLoc.TabIndex = 32;
+            this.BtnLoc.Text = "Abrir";
+            this.BtnLoc.UseVisualStyleBackColor = false;
+            this.BtnLoc.Click += new System.EventHandler(this.BtnLoc_Click);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(41, 365);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(173, 19);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Ingreso de Localidad";
+            // 
+            // BtnUMed
+            // 
+            this.BtnUMed.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BtnUMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.BtnUMed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnUMed.FlatAppearance.BorderSize = 0;
+            this.BtnUMed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.BtnUMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUMed.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnUMed.Location = new System.Drawing.Point(242, 293);
+            this.BtnUMed.Name = "BtnUMed";
+            this.BtnUMed.Size = new System.Drawing.Size(80, 27);
+            this.BtnUMed.TabIndex = 30;
+            this.BtnUMed.Text = "Abrir";
+            this.BtnUMed.UseVisualStyleBackColor = false;
+            this.BtnUMed.Click += new System.EventHandler(this.BtnUMed_Click);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(41, 296);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(173, 19);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Ingreso de U. Medida";
+            // 
+            // BtnMarca
+            // 
+            this.BtnMarca.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BtnMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.BtnMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnMarca.FlatAppearance.BorderSize = 0;
+            this.BtnMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.BtnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnMarca.Location = new System.Drawing.Point(242, 220);
+            this.BtnMarca.Name = "BtnMarca";
+            this.BtnMarca.Size = new System.Drawing.Size(80, 27);
+            this.BtnMarca.TabIndex = 28;
+            this.BtnMarca.Text = "Abrir";
+            this.BtnMarca.UseVisualStyleBackColor = false;
+            this.BtnMarca.Click += new System.EventHandler(this.BtnMarca_Click);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(41, 223);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(145, 19);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Ingreso de Marca";
+            // 
             // BtnRubro
             // 
             this.BtnRubro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -668,126 +789,6 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "Temas";
             // 
-            // BtnMarca
-            // 
-            this.BtnMarca.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BtnMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.BtnMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnMarca.FlatAppearance.BorderSize = 0;
-            this.BtnMarca.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
-            this.BtnMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMarca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnMarca.Location = new System.Drawing.Point(242, 220);
-            this.BtnMarca.Name = "BtnMarca";
-            this.BtnMarca.Size = new System.Drawing.Size(80, 27);
-            this.BtnMarca.TabIndex = 28;
-            this.BtnMarca.Text = "Abrir";
-            this.BtnMarca.UseVisualStyleBackColor = false;
-            this.BtnMarca.Click += new System.EventHandler(this.BtnMarca_Click);
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(41, 223);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(145, 19);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Ingreso de Marca";
-            // 
-            // BtnUMed
-            // 
-            this.BtnUMed.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BtnUMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.BtnUMed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnUMed.FlatAppearance.BorderSize = 0;
-            this.BtnUMed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
-            this.BtnUMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUMed.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnUMed.Location = new System.Drawing.Point(242, 293);
-            this.BtnUMed.Name = "BtnUMed";
-            this.BtnUMed.Size = new System.Drawing.Size(80, 27);
-            this.BtnUMed.TabIndex = 30;
-            this.BtnUMed.Text = "Abrir";
-            this.BtnUMed.UseVisualStyleBackColor = false;
-            this.BtnUMed.Click += new System.EventHandler(this.BtnUMed_Click);
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(41, 296);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(173, 19);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Ingreso de U. Medida";
-            // 
-            // BtnLoc
-            // 
-            this.BtnLoc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BtnLoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.BtnLoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLoc.FlatAppearance.BorderSize = 0;
-            this.BtnLoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
-            this.BtnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnLoc.Location = new System.Drawing.Point(242, 362);
-            this.BtnLoc.Name = "BtnLoc";
-            this.BtnLoc.Size = new System.Drawing.Size(80, 27);
-            this.BtnLoc.TabIndex = 32;
-            this.BtnLoc.Text = "Abrir";
-            this.BtnLoc.UseVisualStyleBackColor = false;
-            this.BtnLoc.Click += new System.EventHandler(this.BtnLoc_Click);
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(41, 365);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 19);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Ingreso de Localidad";
-            // 
-            // BtnFpago
-            // 
-            this.BtnFpago.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BtnFpago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.BtnFpago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnFpago.FlatAppearance.BorderSize = 0;
-            this.BtnFpago.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
-            this.BtnFpago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFpago.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFpago.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnFpago.Location = new System.Drawing.Point(242, 434);
-            this.BtnFpago.Name = "BtnFpago";
-            this.BtnFpago.Size = new System.Drawing.Size(80, 27);
-            this.BtnFpago.TabIndex = 34;
-            this.BtnFpago.Text = "Abrir";
-            this.BtnFpago.UseVisualStyleBackColor = false;
-            this.BtnFpago.Click += new System.EventHandler(this.BtnFpago_Click);
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(41, 437);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(189, 19);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Ingreso de Forma Pago";
-            // 
             // Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,6 +800,7 @@
             this.Controls.Add(this.pnlBackup);
             this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Configuracion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

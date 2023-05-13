@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrudCliente));
             this.DgvClientes = new System.Windows.Forms.DataGridView();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -505,8 +506,9 @@
             this.Controls.Add(this.TxbBuscar);
             this.Controls.Add(this.RbtDNI);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CrudCliente";
-            this.Text = "Cliente";
+            this.Text = "Clientes";
             this.Load += new System.EventHandler(this.CrudCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvClientes)).EndInit();
             this.panel4.ResumeLayout(false);

@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnidadDeMedida));
             this.DgvUnidadMed = new System.Windows.Forms.DataGridView();
             this.id_unidadMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +42,7 @@
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
             this.chkActivo = new System.Windows.Forms.CheckBox();
@@ -54,12 +56,11 @@
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnNuevo = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUnidadMed)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDec)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvUnidadMed
@@ -159,6 +160,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(246, 54);
             this.panel4.TabIndex = 19;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.gobernante;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -335,16 +346,6 @@
             this.BtnNuevo.UseVisualStyleBackColor = false;
             this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.gobernante;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // UnidadDeMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,20 +360,21 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.DgvUnidadMed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UnidadDeMedida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Unidad de Medida";
+            this.Text = "Unidades de Medidas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UnidadDeMedida_FormClosing);
             this.Load += new System.EventHandler(this.UnidadDeMedida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUnidadMed)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDec)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

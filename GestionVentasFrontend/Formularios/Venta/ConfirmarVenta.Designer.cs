@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmarVenta));
             this.label2 = new System.Windows.Forms.Label();
             this.lbFormaPago = new System.Windows.Forms.Label();
             this.cborFormaPago = new System.Windows.Forms.ComboBox();
@@ -58,7 +59,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(134, 129);
+            this.label2.Location = new System.Drawing.Point(132, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(16, 19);
             this.label2.TabIndex = 47;
@@ -70,7 +71,7 @@
             this.lbFormaPago.AutoSize = true;
             this.lbFormaPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFormaPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbFormaPago.Location = new System.Drawing.Point(9, 129);
+            this.lbFormaPago.Location = new System.Drawing.Point(7, 127);
             this.lbFormaPago.Name = "lbFormaPago";
             this.lbFormaPago.Size = new System.Drawing.Size(129, 19);
             this.lbFormaPago.TabIndex = 46;
@@ -83,7 +84,7 @@
             this.cborFormaPago.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cborFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cborFormaPago.FormattingEnabled = true;
-            this.cborFormaPago.Location = new System.Drawing.Point(13, 151);
+            this.cborFormaPago.Location = new System.Drawing.Point(11, 149);
             this.cborFormaPago.Name = "cborFormaPago";
             this.cborFormaPago.Size = new System.Drawing.Size(168, 28);
             this.cborFormaPago.TabIndex = 45;
@@ -127,7 +128,7 @@
             this.lbnombre.AutoSize = true;
             this.lbnombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbnombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbnombre.Location = new System.Drawing.Point(261, 131);
+            this.lbnombre.Location = new System.Drawing.Point(259, 129);
             this.lbnombre.Name = "lbnombre";
             this.lbnombre.Size = new System.Drawing.Size(73, 19);
             this.lbnombre.TabIndex = 51;
@@ -137,7 +138,7 @@
             // 
             this.txbNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNombre.Location = new System.Drawing.Point(259, 153);
+            this.txbNombre.Location = new System.Drawing.Point(257, 151);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(168, 26);
             this.txbNombre.TabIndex = 50;
@@ -148,7 +149,7 @@
             this.lbapelldio.AutoSize = true;
             this.lbapelldio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbapelldio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbapelldio.Location = new System.Drawing.Point(498, 131);
+            this.lbapelldio.Location = new System.Drawing.Point(496, 129);
             this.lbapelldio.Name = "lbapelldio";
             this.lbapelldio.Size = new System.Drawing.Size(75, 19);
             this.lbapelldio.TabIndex = 53;
@@ -158,7 +159,7 @@
             // 
             this.txbApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbApellido.Location = new System.Drawing.Point(502, 153);
+            this.txbApellido.Location = new System.Drawing.Point(500, 151);
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(168, 26);
             this.txbApellido.TabIndex = 52;
@@ -169,7 +170,7 @@
             this.lbAbona.AutoSize = true;
             this.lbAbona.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAbona.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbAbona.Location = new System.Drawing.Point(180, 227);
+            this.lbAbona.Location = new System.Drawing.Point(178, 225);
             this.lbAbona.Name = "lbAbona";
             this.lbAbona.Size = new System.Drawing.Size(97, 19);
             this.lbAbona.TabIndex = 56;
@@ -179,7 +180,7 @@
             // 
             this.txtAbona.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAbona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAbona.Location = new System.Drawing.Point(184, 249);
+            this.txtAbona.Location = new System.Drawing.Point(182, 247);
             this.txtAbona.Name = "txtAbona";
             this.txtAbona.Size = new System.Drawing.Size(120, 26);
             this.txtAbona.TabIndex = 55;
@@ -194,7 +195,7 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTotal.Location = new System.Drawing.Point(524, 322);
+            this.lbTotal.Location = new System.Drawing.Point(522, 320);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(45, 19);
             this.lbTotal.TabIndex = 58;
@@ -205,7 +206,7 @@
             this.txbtotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbtotal.Enabled = false;
             this.txbtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbtotal.Location = new System.Drawing.Point(575, 319);
+            this.txbtotal.Location = new System.Drawing.Point(573, 317);
             this.txbtotal.Name = "txbtotal";
             this.txbtotal.Size = new System.Drawing.Size(95, 26);
             this.txbtotal.TabIndex = 57;
@@ -216,7 +217,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(392, 227);
+            this.label3.Location = new System.Drawing.Point(390, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 19);
             this.label3.TabIndex = 60;
@@ -227,7 +228,7 @@
             this.txtVuelto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtVuelto.Enabled = false;
             this.txtVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVuelto.Location = new System.Drawing.Point(396, 249);
+            this.txtVuelto.Location = new System.Drawing.Point(394, 247);
             this.txtVuelto.Name = "txtVuelto";
             this.txtVuelto.Size = new System.Drawing.Size(120, 26);
             this.txtVuelto.TabIndex = 59;
@@ -242,7 +243,7 @@
             this.BtnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfirmar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnConfirmar.Location = new System.Drawing.Point(275, 333);
+            this.BtnConfirmar.Location = new System.Drawing.Point(273, 329);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(134, 52);
             this.BtnConfirmar.TabIndex = 61;
@@ -256,7 +257,7 @@
             this.lbdni.AutoSize = true;
             this.lbdni.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdni.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbdni.Location = new System.Drawing.Point(498, 12);
+            this.lbdni.Location = new System.Drawing.Point(496, 10);
             this.lbdni.Name = "lbdni";
             this.lbdni.Size = new System.Drawing.Size(36, 19);
             this.lbdni.TabIndex = 63;
@@ -270,7 +271,7 @@
             this.cboDNI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboDNI.FormattingEnabled = true;
-            this.cboDNI.Location = new System.Drawing.Point(540, 9);
+            this.cboDNI.Location = new System.Drawing.Point(538, 7);
             this.cboDNI.Name = "cboDNI";
             this.cboDNI.Size = new System.Drawing.Size(130, 28);
             this.cboDNI.TabIndex = 64;
@@ -288,7 +289,7 @@
             this.BtnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnAgregarCliente.Location = new System.Drawing.Point(467, 9);
+            this.BtnAgregarCliente.Location = new System.Drawing.Point(465, 5);
             this.BtnAgregarCliente.Name = "BtnAgregarCliente";
             this.BtnAgregarCliente.Size = new System.Drawing.Size(29, 28);
             this.BtnAgregarCliente.TabIndex = 65;
@@ -321,12 +322,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbFormaPago);
             this.Controls.Add(this.cborFormaPago);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(698, 465);
             this.MinimumSize = new System.Drawing.Size(698, 465);
             this.Name = "ConfirmarVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ConfirmarVenta";
+            this.Text = "Confirmar Venta";
             this.Load += new System.EventHandler(this.ConfirmarVenta_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
