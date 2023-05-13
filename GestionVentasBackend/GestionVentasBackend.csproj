@@ -81,6 +81,7 @@
     <Compile Include="Dominio\Producto.cs" />
     <Compile Include="Dominio\Rol.cs" />
     <Compile Include="Dominio\Rubro.cs" />
+    <Compile Include="Dominio\Tema.cs" />
     <Compile Include="Dominio\UnidadMedida.cs" />
     <Compile Include="Dominio\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

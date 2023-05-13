@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFondo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnLogin = new System.Windows.Forms.Button();
@@ -36,26 +36,26 @@
             this.txbalias = new System.Windows.Forms.TextBox();
             this.piccontra = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.pnlFondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piccontra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlFondo
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.panel1.Controls.Add(this.piccontra);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.BtnLogin);
-            this.panel1.Controls.Add(this.txbcontraseña);
-            this.panel1.Controls.Add(this.txbalias);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(637, 610);
-            this.panel1.TabIndex = 0;
+            this.pnlFondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pnlFondo.Controls.Add(this.piccontra);
+            this.pnlFondo.Controls.Add(this.label2);
+            this.pnlFondo.Controls.Add(this.label1);
+            this.pnlFondo.Controls.Add(this.BtnLogin);
+            this.pnlFondo.Controls.Add(this.txbcontraseña);
+            this.pnlFondo.Controls.Add(this.txbalias);
+            this.pnlFondo.Controls.Add(this.pictureBox1);
+            this.pnlFondo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFondo.Location = new System.Drawing.Point(0, 0);
+            this.pnlFondo.Name = "pnlFondo";
+            this.pnlFondo.Size = new System.Drawing.Size(637, 610);
+            this.pnlFondo.TabIndex = 0;
             // 
             // label2
             // 
@@ -128,10 +128,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.a1;
-            this.pictureBox1.Location = new System.Drawing.Point(106, 36);
+            this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.LogoLogin;
+            this.pictureBox1.Location = new System.Drawing.Point(131, 32);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(429, 314);
+            this.pictureBox1.Size = new System.Drawing.Size(398, 281);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -141,14 +141,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 610);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlFondo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesion";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Login_Load);
+            this.pnlFondo.ResumeLayout(false);
+            this.pnlFondo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piccontra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -157,7 +158,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlFondo;
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.TextBox txbcontraseña;
         private System.Windows.Forms.TextBox txbalias;

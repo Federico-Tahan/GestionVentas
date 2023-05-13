@@ -20,6 +20,31 @@ namespace GestionVentasNegocio.Implementacion
             lg = new Imp_Cbos();
         }
 
+        public bool AltaFp(FormaPago c)
+        {
+            return lg.AltaFp(c);
+        }
+
+        public bool AltaLocalidad(Localidad c)
+        {
+            return lg.AltaLocalidad(c);
+        }
+
+        public bool AltaMarca(Marca c)
+        {
+            return lg.AltaMarca(c);
+        }
+
+        public bool AltaRubro(Rubro c)
+        {
+            return lg.AltaRubro(c);
+        }
+
+        public bool AltaUnidadMed(UnidadMedida c)
+        {
+            return lg.AltaUnidadMed(c);
+        }
+
         public List<FormaPago> ObtenerFormaPago(int modo)
         {
             return lg.ObtenerFormaPago(modo);
@@ -53,6 +78,31 @@ namespace GestionVentasNegocio.Implementacion
         public List<UnidadMedida> ObtenerUnidadMedida(int modo)
         {
             return lg.ObtenerUnidadMedida(modo);
+        }
+
+        public bool UpdateFp(FormaPago c)
+        {
+            return lg.UpdateFp(c);
+        }
+
+        public bool UpdateLocalidad(Localidad c)
+        {
+            return lg.UpdateLocalidad(c);
+        }
+
+        public bool UpdateMarca(Marca c)
+        {
+            return lg.UpdateMarca(c);
+        }
+
+        public bool UpdateRubro(Rubro c)
+        {
+            return lg.UpdateRubro(c);
+        }
+
+        public bool UpdateUnidadMed(UnidadMedida c)
+        {
+            return lg.UpdateUnidadMed(c);
         }
     }
 }

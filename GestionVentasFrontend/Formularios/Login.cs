@@ -16,7 +16,9 @@ namespace GestionVentasFrontend
 {
     public partial class Login : Form
     {
-        Ing_Login lg = new Inmp_Login(); 
+        Ing_Login lg = new Inmp_Login();
+        ing_Configuracion lc = new ng_Configuracion();
+
         public static Usuario usuario = new Usuario();
          
         public Login()
@@ -58,6 +60,36 @@ namespace GestionVentasFrontend
                 piccontra.Tag = "cerrado";
                 piccontra.Image = Properties.Resources.lock__1_;
             }
+        }
+
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lc.TraerConfig();
+            int tema = c.t.id_tema;
+            if (tema == 1)
+            {
+                pnlFondo.BackColor = Color.FromArgb(31,31,31);
+                BtnLogin.BackColor = Color.FromArgb(31,31,31);
+                BtnLogin.FlatAppearance.MouseOverBackColor = Color.Thistle;
+                BtnLogin.FlatAppearance.BorderColor = Color.Thistle;
+            }
+            else if (tema == 1)
+            {
+            }
+            else
+            {
+                pnlFondo.BackColor = Color.FromArgb(31, 31, 31);
+                BtnLogin.BackColor = Color.FromArgb(31, 31, 31);
+                BtnLogin.FlatAppearance.MouseOverBackColor = Color.Thistle;
+                BtnLogin.FlatAppearance.BorderColor = Color.Violet;
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            SeleccionarColor();
+
         }
     }
 }

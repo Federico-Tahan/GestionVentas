@@ -57,15 +57,16 @@
             this.RbtMonto = new System.Windows.Forms.RadioButton();
             this.nupAumento = new System.Windows.Forms.NumericUpDown();
             this.BtnAplicar = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlStoc = new System.Windows.Forms.Panel();
             this.lbStock = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbAumento = new System.Windows.Forms.Label();
             this.RbtStock = new System.Windows.Forms.RadioButton();
             this.lbitem = new System.Windows.Forms.Label();
+            this.chkVisible = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAumento)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.pnlStoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -295,15 +296,15 @@
             this.BtnAplicar.UseVisualStyleBackColor = false;
             this.BtnAplicar.Click += new System.EventHandler(this.BtnAplicar_Click);
             // 
-            // panel4
+            // pnlStoc
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.panel4.Controls.Add(this.lbStock);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(204, 54);
-            this.panel4.TabIndex = 22;
+            this.pnlStoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pnlStoc.Controls.Add(this.lbStock);
+            this.pnlStoc.Controls.Add(this.pictureBox2);
+            this.pnlStoc.Location = new System.Drawing.Point(0, 0);
+            this.pnlStoc.Name = "pnlStoc";
+            this.pnlStoc.Size = new System.Drawing.Size(204, 54);
+            this.pnlStoc.TabIndex = 22;
             // 
             // lbStock
             // 
@@ -366,16 +367,31 @@
             this.lbitem.TabIndex = 25;
             this.lbitem.Text = "items: 0";
             // 
+            // chkVisible
+            // 
+            this.chkVisible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkVisible.AutoSize = true;
+            this.chkVisible.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkVisible.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.chkVisible.Location = new System.Drawing.Point(892, 0);
+            this.chkVisible.Name = "chkVisible";
+            this.chkVisible.Size = new System.Drawing.Size(154, 25);
+            this.chkVisible.TabIndex = 26;
+            this.chkVisible.Text = "Prod. bajo Stock";
+            this.chkVisible.UseVisualStyleBackColor = true;
+            this.chkVisible.CheckedChanged += new System.EventHandler(this.chkVisible_CheckedChanged);
+            // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(67)))), ((int)(((byte)(133)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(59)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(1047, 705);
+            this.Controls.Add(this.chkVisible);
             this.Controls.Add(this.lbitem);
             this.Controls.Add(this.RbtStock);
             this.Controls.Add(this.lbAumento);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.pnlStoc);
             this.Controls.Add(this.BtnAplicar);
             this.Controls.Add(this.nupAumento);
             this.Controls.Add(this.RbtMonto);
@@ -391,8 +407,8 @@
             this.Load += new System.EventHandler(this.Stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupAumento)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlStoc.ResumeLayout(false);
+            this.pnlStoc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -410,7 +426,7 @@
         private System.Windows.Forms.RadioButton RbtMonto;
         private System.Windows.Forms.NumericUpDown nupAumento;
         private System.Windows.Forms.Button BtnAplicar;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlStoc;
         private System.Windows.Forms.Label lbStock;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbAumento;
@@ -425,5 +441,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Stockk;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccion;
         private System.Windows.Forms.Label lbitem;
+        private System.Windows.Forms.CheckBox chkVisible;
     }
 }

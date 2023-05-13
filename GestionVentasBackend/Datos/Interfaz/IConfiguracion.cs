@@ -19,5 +19,8 @@ namespace GestionVentasBackend.Datos.Interfaz
 
         Config TraerConfig();
 
+        List<Tema> GetTemas();
+
+        bool UpdateTema(int i);
     }
 }

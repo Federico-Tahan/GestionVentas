@@ -50,8 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.picLimpiar = new System.Windows.Forms.PictureBox();
-            this.PicBajar = new System.Windows.Forms.PictureBox();
             this.lbStock = new System.Windows.Forms.Label();
             this.lbstockmin = new System.Windows.Forms.Label();
             this.lbdescuento = new System.Windows.Forms.Label();
@@ -77,7 +75,6 @@
             this.BtnNuevo = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.DgvProductos = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,22 +96,25 @@
             this.rbtactivo = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.TxbNombreFil = new System.Windows.Forms.TextBox();
+            this.picLimpiar = new System.Windows.Forms.PictureBox();
+            this.PicBajar = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnl.SuspendLayout();
             this.pnlForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLimpiar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBajar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupStockMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDescuento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLimpiar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBajar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl
             // 
-            this.pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(67)))), ((int)(((byte)(133)))));
+            this.pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(59)))), ((int)(((byte)(86)))));
             this.pnl.Controls.Add(this.BtnMarca);
             this.pnl.Controls.Add(this.BtnUnidadMed);
             this.pnl.Controls.Add(this.BtnRubro);
@@ -156,6 +156,7 @@
             this.BtnMarca.TabIndex = 22;
             this.BtnMarca.Text = "Marca";
             this.BtnMarca.UseVisualStyleBackColor = false;
+            this.BtnMarca.Click += new System.EventHandler(this.BtnMarca_Click);
             // 
             // BtnUnidadMed
             // 
@@ -173,6 +174,7 @@
             this.BtnUnidadMed.TabIndex = 21;
             this.BtnUnidadMed.Text = "Unidad Medida";
             this.BtnUnidadMed.UseVisualStyleBackColor = false;
+            this.BtnUnidadMed.Click += new System.EventHandler(this.BtnUnidadMed_Click);
             // 
             // BtnRubro
             // 
@@ -190,6 +192,7 @@
             this.BtnRubro.TabIndex = 20;
             this.BtnRubro.Text = "Rubro";
             this.BtnRubro.UseVisualStyleBackColor = false;
+            this.BtnRubro.Click += new System.EventHandler(this.BtnRubro_Click);
             // 
             // pnlForm
             // 
@@ -315,34 +318,6 @@
             this.label5.Size = new System.Drawing.Size(16, 19);
             this.label5.TabIndex = 43;
             this.label5.Text = "*";
-            // 
-            // picLimpiar
-            // 
-            this.picLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.picLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picLimpiar.Image = global::GestionVentasFrontend.Properties.Resources.limpieza_de_datos;
-            this.picLimpiar.Location = new System.Drawing.Point(878, 3);
-            this.picLimpiar.Name = "picLimpiar";
-            this.picLimpiar.Size = new System.Drawing.Size(56, 48);
-            this.picLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLimpiar.TabIndex = 21;
-            this.picLimpiar.TabStop = false;
-            this.picLimpiar.Click += new System.EventHandler(this.picLimpiar_Click);
-            // 
-            // PicBajar
-            // 
-            this.PicBajar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PicBajar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.PicBajar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PicBajar.Image = global::GestionVentasFrontend.Properties.Resources.abajo;
-            this.PicBajar.Location = new System.Drawing.Point(948, 3);
-            this.PicBajar.Name = "PicBajar";
-            this.PicBajar.Size = new System.Drawing.Size(56, 48);
-            this.PicBajar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PicBajar.TabIndex = 20;
-            this.PicBajar.TabStop = false;
-            this.PicBajar.Click += new System.EventHandler(this.PicBajar_Click);
             // 
             // lbStock
             // 
@@ -673,16 +648,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Productos";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GestionVentasFrontend.Properties.Resources.biblioteca_en_linea;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 54);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // DgvProductos
             // 
             this.DgvProductos.AllowUserToAddRows = false;
@@ -934,6 +899,44 @@
             this.TxbNombreFil.TabIndex = 50;
             this.TxbNombreFil.TextChanged += new System.EventHandler(this.TxbNombreFil_TextChanged);
             // 
+            // picLimpiar
+            // 
+            this.picLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.picLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLimpiar.Image = global::GestionVentasFrontend.Properties.Resources.limpieza_de_datos;
+            this.picLimpiar.Location = new System.Drawing.Point(878, 3);
+            this.picLimpiar.Name = "picLimpiar";
+            this.picLimpiar.Size = new System.Drawing.Size(56, 48);
+            this.picLimpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLimpiar.TabIndex = 21;
+            this.picLimpiar.TabStop = false;
+            this.picLimpiar.Click += new System.EventHandler(this.picLimpiar_Click);
+            // 
+            // PicBajar
+            // 
+            this.PicBajar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PicBajar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            this.PicBajar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PicBajar.Image = global::GestionVentasFrontend.Properties.Resources.abajo;
+            this.PicBajar.Location = new System.Drawing.Point(948, 3);
+            this.PicBajar.Name = "PicBajar";
+            this.PicBajar.Size = new System.Drawing.Size(56, 48);
+            this.PicBajar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicBajar.TabIndex = 20;
+            this.PicBajar.TabStop = false;
+            this.PicBajar.Click += new System.EventHandler(this.PicBajar_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GestionVentasFrontend.Properties.Resources.biblioteca_en_linea;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 54);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // CrudProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -951,16 +954,16 @@
             this.pnl.PerformLayout();
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLimpiar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBajar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupStockMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupDescuento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLimpiar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBajar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

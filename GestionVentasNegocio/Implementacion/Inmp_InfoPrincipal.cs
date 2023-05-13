@@ -17,6 +17,11 @@ namespace GestionVentasNegocio.Implementacion
             lg = new Imp_InfoPrincipal();
         }
 
+        public bool FaltaStock()
+        {
+            return lg.FaltaStock();
+        }
+
         public decimal RecaudadoHoy()
         {
            return lg.RecaudadoHoy();

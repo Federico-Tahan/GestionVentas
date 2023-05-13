@@ -30,7 +30,7 @@ namespace GestionVentasFrontend.Formularios.Venta
             lc = new Inmp_Cbo();
             lf = new Inmp_Factura();
             cl = new Inmp_CrudCliente();
-
+            SeleccionarColor();
 
         }
 
@@ -61,14 +61,51 @@ namespace GestionVentasFrontend.Formularios.Venta
             {
                 cboDNI.Visible = true;
                 lbdni.Visible = true;
+                BtnAgregarCliente.Visible = true;
             }
             else
             {
                 cboDNI.Visible = false;
                 lbdni.Visible = false;
+                BtnAgregarCliente.Visible = false;
+
             }
         }
+        ing_Configuracion lv = new ng_Configuracion();
 
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lv.TraerConfig();
+            int tema = c.t.id_tema;
+            string color = "#513b56";
+            string color2 = "#45364b";
+
+            if (tema == 1)
+            {
+                color = "#513b56";
+                color2 = "#45364b";
+
+            }
+            else if (tema == 2)
+            {
+                color = "#469d89";
+
+            }
+            else if (tema == 3)
+            {
+                color = "#adb5bd";
+
+            }
+            else if (tema == 4)
+            {
+                color = "#212529";
+
+            }
+
+            this.BackColor = ColorTranslator.FromHtml(color);
+
+        }
         private void cborFormaPago_SelectedValueChanged(object sender, EventArgs e)
         {
         }
@@ -202,6 +239,17 @@ namespace GestionVentasFrontend.Formularios.Venta
                 txbApellido.Text = cli.Apellido;
 
             }
+        }
+
+        private void BtnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            CrudCliente  c = new CrudCliente();
+            c.FormBorderStyle = FormBorderStyle.FixedSingle;
+            c.StartPosition = FormStartPosition.CenterScreen;
+            c.ShowDialog();
+
+            cargar_cbo(cboDNI, "DNI", "DNI", cl.TrarClientes());
+
         }
     }
 }

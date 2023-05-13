@@ -11,5 +11,6 @@ namespace GestionVentasNegocio.Interfaz
         decimal RecaudadoHoy();
         int VentasDelDia();
         int VentasDelMES();
+        bool FaltaStock();
     }
 }

@@ -77,15 +77,29 @@
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cborubro = new System.Windows.Forms.ComboBox();
             this.DgvModVenta = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnCancelarVenta = new System.Windows.Forms.Button();
-            this.lbnombre = new System.Windows.Forms.Label();
-            this.lbAbona = new System.Windows.Forms.Label();
-            this.lbFormaPago = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbnombre = new System.Windows.Forms.Label();
+            this.lbFormaPago = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbAbona = new System.Windows.Forms.Label();
             this.DgvFacturas = new System.Windows.Forms.DataGridView();
             this.IdFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,20 +113,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acion = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDetalleVenta)).BeginInit();
             this.pnlDetalle.SuspendLayout();
             this.PnlModificacion.SuspendLayout();
@@ -122,10 +122,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvModVenta)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFacturas)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvDetalleVenta
@@ -242,7 +242,7 @@
             // 
             // pnlDetalle
             // 
-            this.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(67)))), ((int)(((byte)(133)))));
+            this.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(59)))), ((int)(((byte)(86)))));
             this.pnlDetalle.Controls.Add(this.PnlModificacion);
             this.pnlDetalle.Controls.Add(this.BtnVolver);
             this.pnlDetalle.Controls.Add(this.BtnModificar);
@@ -263,7 +263,7 @@
             // 
             // PnlModificacion
             // 
-            this.PnlModificacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(67)))), ((int)(((byte)(133)))));
+            this.PnlModificacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(59)))), ((int)(((byte)(86)))));
             this.PnlModificacion.Controls.Add(this.label4);
             this.PnlModificacion.Controls.Add(this.txbTotal);
             this.PnlModificacion.Controls.Add(this.BtnAgregar);
@@ -281,7 +281,6 @@
             this.PnlModificacion.Controls.Add(this.cboMarca);
             this.PnlModificacion.Controls.Add(this.cborubro);
             this.PnlModificacion.Controls.Add(this.DgvModVenta);
-            this.PnlModificacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlModificacion.Location = new System.Drawing.Point(0, 0);
             this.PnlModificacion.Name = "PnlModificacion";
             this.PnlModificacion.Size = new System.Drawing.Size(1064, 702);
@@ -550,6 +549,77 @@
             this.DgvModVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvModVenta_CellContentClick);
             this.DgvModVenta.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvModVenta_CellFormatting);
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Codigo Producto";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Rubro";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Precio";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Descuento";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.FillWeight = 65.98985F;
+            this.dataGridViewTextBoxColumn11.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // acion
+            // 
+            this.acion.FillWeight = 65.98985F;
+            this.acion.HeaderText = "Accion";
+            this.acion.Name = "acion";
+            this.acion.ReadOnly = true;
+            this.acion.Text = "Quitar";
+            this.acion.UseColumnTextForButtonValue = true;
+            // 
             // BtnVolver
             // 
             this.BtnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -604,37 +674,6 @@
             this.BtnCancelarVenta.UseVisualStyleBackColor = false;
             this.BtnCancelarVenta.Click += new System.EventHandler(this.BtnCancelarVenta_Click);
             // 
-            // lbnombre
-            // 
-            this.lbnombre.AutoSize = true;
-            this.lbnombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbnombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbnombre.Location = new System.Drawing.Point(193, 125);
-            this.lbnombre.Name = "lbnombre";
-            this.lbnombre.Size = new System.Drawing.Size(0, 21);
-            this.lbnombre.TabIndex = 58;
-            // 
-            // lbAbona
-            // 
-            this.lbAbona.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbAbona.AutoSize = true;
-            this.lbAbona.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAbona.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbAbona.Location = new System.Drawing.Point(123, 7);
-            this.lbAbona.Name = "lbAbona";
-            this.lbAbona.Size = new System.Drawing.Size(0, 21);
-            this.lbAbona.TabIndex = 57;
-            // 
-            // lbFormaPago
-            // 
-            this.lbFormaPago.AutoSize = true;
-            this.lbFormaPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFormaPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbFormaPago.Location = new System.Drawing.Point(163, 91);
-            this.lbFormaPago.Name = "lbFormaPago";
-            this.lbFormaPago.Size = new System.Drawing.Size(0, 21);
-            this.lbFormaPago.TabIndex = 50;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -665,6 +704,82 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(29, 125);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(158, 19);
+            this.label7.TabIndex = 66;
+            this.label7.Text = "Nombre Completo:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(24, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 19);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Forma de Pago:";
+            // 
+            // lbnombre
+            // 
+            this.lbnombre.AutoSize = true;
+            this.lbnombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbnombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbnombre.Location = new System.Drawing.Point(193, 125);
+            this.lbnombre.Name = "lbnombre";
+            this.lbnombre.Size = new System.Drawing.Size(0, 21);
+            this.lbnombre.TabIndex = 58;
+            // 
+            // lbFormaPago
+            // 
+            this.lbFormaPago.AutoSize = true;
+            this.lbFormaPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFormaPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbFormaPago.Location = new System.Drawing.Point(163, 91);
+            this.lbFormaPago.Name = "lbFormaPago";
+            this.lbFormaPago.Size = new System.Drawing.Size(0, 21);
+            this.lbFormaPago.TabIndex = 50;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lbAbona);
+            this.panel1.Location = new System.Drawing.Point(790, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(274, 35);
+            this.panel1.TabIndex = 64;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(4, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 19);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Abono con: $";
+            // 
+            // lbAbona
+            // 
+            this.lbAbona.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAbona.AutoSize = true;
+            this.lbAbona.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAbona.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbAbona.Location = new System.Drawing.Point(123, 7);
+            this.lbAbona.Name = "lbAbona";
+            this.lbAbona.Size = new System.Drawing.Size(0, 21);
+            this.lbAbona.TabIndex = 57;
             // 
             // DgvFacturas
             // 
@@ -811,127 +926,11 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Ventas";
             // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(4, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 19);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Abono con: $";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.lbAbona);
-            this.panel1.Location = new System.Drawing.Point(790, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 35);
-            this.panel1.TabIndex = 64;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(24, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 19);
-            this.label6.TabIndex = 65;
-            this.label6.Text = "Forma de Pago:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(29, 125);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 19);
-            this.label7.TabIndex = 66;
-            this.label7.Text = "Nombre Completo:";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Codigo Producto";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Rubro";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Precio";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Descuento";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.FillWeight = 65.98985F;
-            this.dataGridViewTextBoxColumn11.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // acion
-            // 
-            this.acion.FillWeight = 65.98985F;
-            this.acion.HeaderText = "Accion";
-            this.acion.Name = "acion";
-            this.acion.ReadOnly = true;
-            this.acion.Text = "Quitar";
-            this.acion.UseColumnTextForButtonValue = true;
-            // 
             // ConsultarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(67)))), ((int)(((byte)(133)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(59)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(1064, 702);
             this.Controls.Add(this.pnlDetalle);
             this.Controls.Add(this.DgvFacturas);
@@ -953,12 +952,12 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFacturas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

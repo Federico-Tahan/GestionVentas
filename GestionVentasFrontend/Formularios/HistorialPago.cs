@@ -15,6 +15,8 @@ namespace GestionVentasFrontend.Formularios
 {
     public partial class HistorialPago : Form
     {
+        ing_Configuracion lv = new ng_Configuracion();
+
         In_CrudCliente lg;
         In_HistorialPago lh;
         Cliente Clienteselected = new Cliente();
@@ -26,10 +28,12 @@ namespace GestionVentasFrontend.Formularios
             InitializeComponent();
             lg = new Inmp_CrudCliente();
             lh = new Inmp_HistorialPago();
+            SeleccionarColor();
         }
 
         private void HistorialPago_Load(object sender, EventArgs e)
         {
+
             lHist = lh.TraerPagos(2);
             CargarDGV();
             cargar_cbo(cboDNI,"DNI", "DNI",lg.TrarClientes());
@@ -69,7 +73,39 @@ namespace GestionVentasFrontend.Formularios
             nupDebe.Value = 0;
 
         }
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lv.TraerConfig();
+            int tema = c.t.id_tema;
+            string color = "#513b56";
+            string color2 = "#45364b";
 
+            if (tema == 1)
+            {
+                color = "#513b56";
+                color2 = "#45364b";
+
+            }
+            else if (tema == 2)
+            {
+                color = "#469d89";
+
+            }
+            else if (tema == 3)
+            {
+                color = "#adb5bd";
+
+            }
+            else if (tema == 4)
+            {
+                color = "#212529";
+
+            }
+
+            this.BackColor = ColorTranslator.FromHtml(color);
+
+        }
         private void cargar_cbo<T>(ComboBox cbo, string display, string value, List<T> lista)
         {
             cbo.DataSource = lista;

@@ -7,13 +7,13 @@
     <ProjectGuid>{161A421A-649E-4DE9-ABF0-97BA38F9BD6C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>GestionVentasFrontend</RootNamespace>
-    <AssemblyName>GestionVentasFrontend</AssemblyName>
+    <AssemblyName>CodeFlowSell</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\fedet\Desktop\PoliRubroInstaller\</PublishUrl>
+    <PublishUrl>C:\Users\fedet\Desktop\CodeFlowSell\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -60,6 +60,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LogoOnly.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -125,6 +128,30 @@
       <DependentUpon>CrudUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Extra\Encriptacion.cs" />
+    <Compile Include="Formularios\Extra\FormFormaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Extra\FormFormaPago.Designer.cs">
+      <DependentUpon>FormFormaPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Extra\FormLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Extra\FormLocalidad.Designer.cs">
+      <DependentUpon>FormLocalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Extra\FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Extra\FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Extra\FormRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Extra\FormRubro.Designer.cs">
+      <DependentUpon>FormRubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Extra\Ticket.cs" />
     <Compile Include="Formularios\Extra\UnidadDeMedida.cs">
       <SubType>Form</SubType>
@@ -179,6 +206,12 @@
     <Compile Include="Formularios\Reportes\FormReporteTopProductos.Designer.cs">
       <DependentUpon>FormReporteTopProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Reportes\GeneradoxMesxeMPLEADO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\GeneradoxMesxeMPLEADO.Designer.cs">
+      <DependentUpon>GeneradoxMesxeMPLEADO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Reportes\ReporteGananciasXRubro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +248,11 @@
     <Compile Include="Formularios\Venta\Venta.Designer.cs">
       <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyTheme.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyTheme.resx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -232,6 +270,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CrudUsuario.resx">
       <DependentUpon>CrudUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Extra\FormFormaPago.resx">
+      <DependentUpon>FormFormaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Extra\FormLocalidad.resx">
+      <DependentUpon>FormLocalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Extra\FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Extra\FormRubro.resx">
+      <DependentUpon>FormRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Extra\UnidadDeMedida.resx">
       <DependentUpon>UnidadDeMedida.cs</DependentUpon>
@@ -257,6 +307,10 @@
     <EmbeddedResource Include="Formularios\Reportes\FormReporteTopProductos.resx">
       <DependentUpon>FormReporteTopProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\GeneradoxEmpleado.rdlc" />
+    <EmbeddedResource Include="Formularios\Reportes\GeneradoxMesxeMPLEADO.resx">
+      <DependentUpon>GeneradoxMesxeMPLEADO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Reportes\ReportDeudaCliente.rdlc" />
     <EmbeddedResource Include="Formularios\Reportes\ReporteGananciasXRubro.resx">
       <DependentUpon>ReporteGananciasXRubro.cs</DependentUpon>
@@ -279,6 +333,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Venta\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyTheme.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MyTheme.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -477,6 +535,21 @@
     <None Include="Resources\numero-4.png" />
     <None Include="Resources\numero-5.png" />
     <None Include="Resources\numero-6.png" />
+    <None Include="Resources\sss.png" />
+    <None Include="Resources\reset.png" />
+    <None Include="Resources\reset %281%29.png" />
+    <None Include="Resources\LogoPrincipal.png" />
+    <None Include="Resources\LogoLogin.png" />
+    <None Include="Resources\LogoPrincipalsi.png" />
+    <None Include="Resources\programador32.png" />
+    <None Include="Resources\billete-de-banco.png" />
+    <None Include="Resources\servicio-al-cliente.png" />
+    <None Include="Resources\tienda.png" />
+    <None Include="Resources\etiqueta.png" />
+    <None Include="Resources\tarjeta-de-credito.png" />
+    <None Include="Resources\gobernante.png" />
+    <None Include="Resources\mapa.png" />
+    <Content Include="LogoOnly.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

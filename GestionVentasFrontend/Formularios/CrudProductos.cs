@@ -1,4 +1,5 @@
 ﻿using GestionVentasBackend.Dominio;
+using GestionVentasFrontend.Formularios.Extra;
 using GestionVentasNegocio.Implementacion;
 using GestionVentasNegocio.Interfaz;
 using System;
@@ -19,6 +20,7 @@ namespace GestionVentasFrontend.Formularios
     {
         In_Cbos lc;
         In_CrudProductos lg;
+        ing_Configuracion lv = new ng_Configuracion();
         Producto productoSelected = new Producto();
         Producto Producto;
         List<Producto> lproductos = new List<Producto>();
@@ -26,9 +28,9 @@ namespace GestionVentasFrontend.Formularios
         public CrudProductos()
         {
             InitializeComponent();
+            SeleccionarColor();
             lc = new Inmp_Cbo();
             lg = new Inmp_CrudProductos();
-            
         }
 
         private void BtnNuevo_Click(object sender, EventArgs e)
@@ -40,16 +42,49 @@ namespace GestionVentasFrontend.Formularios
             chkActivo.Visible = false;
             Limpiar();
         }
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lv.TraerConfig();
+            int tema = c.t.id_tema;
+            string color = "#513b56";
+            string color2 = "#45364b";
 
+            if (tema == 1)
+            {
+                color = "#513b56";
+                color2 = "#45364b";
+
+            }
+            else if (tema == 2)
+            {
+                color = "#469d89";
+
+            }
+            else if (tema == 3)
+            {
+                color = "#adb5bd";
+
+            }
+            else if (tema == 4)
+            {
+                color = "#212529";
+
+            }
+
+            this.BackColor = ColorTranslator.FromHtml(color);
+            pnl.BackColor = ColorTranslator.FromHtml(color);
+
+        }
         private void CrudProductos_Load(object sender, EventArgs e)
         {
-            cargar_cbo(cboMarca, "Nombre", "id_Marca", lc.ObtenerMarcas(1));
+            cargar_cbo(cboMarca, "Nombre", "id_Marca", lc.ObtenerMarcas(2));
             cargar_cbo(cborubro, "Nombre", "id_rubro", lc.ObtenerRubros(1));
             cargar_cbo(cboMarcafil, "Nombre", "id_Marca", lc.ObtenerMarcas(0));
             cboMarcafil.SelectedIndex = 0;
             cargar_cbo(cboRubrofil, "Nombre", "id_rubro", lc.ObtenerRubros(0));
             cboRubrofil.SelectedIndex = 0;
-            cargar_cbo(CboUnidadMed, "Nombre", "Id_UnidadMedida", lc.ObtenerUnidadMedida(1));
+            cargar_cbo(CboUnidadMed, "Nombre", "Id_UnidadMedida", lc.ObtenerUnidadMedida(2));
             lproductos = lg.ObtenerProductos(0);
             cargarDgv(lproductos);
 
@@ -487,6 +522,45 @@ namespace GestionVentasFrontend.Formularios
             {
                 // Establecer el color de fondo en White para filas impares
                 e.CellStyle.BackColor = ColorTranslator.FromHtml("#e2f0fb");
+            }
+        }
+
+        private void BtnUnidadMed_Click(object sender, EventArgs e)
+        {
+            UnidadDeMedida form = new UnidadDeMedida();
+            form.DialogResult = DialogResult.No;
+            form.ShowDialog();
+
+            if (form.DialogResult == DialogResult.Yes)
+            {
+                cargar_cbo(CboUnidadMed, "Nombre", "Id_UnidadMedida", lc.ObtenerUnidadMedida(2));
+
+            }
+        }
+
+        private void BtnMarca_Click(object sender, EventArgs e)
+        {
+            FormMarca form = new FormMarca();
+            form.DialogResult = DialogResult.No;
+            form.ShowDialog();
+
+            if (form.DialogResult == DialogResult.Yes) 
+            {
+                cargar_cbo(cboMarca, "Nombre", "id_Marca", lc.ObtenerMarcas(2));
+
+            }
+        }
+
+        private void BtnRubro_Click(object sender, EventArgs e)
+        {
+            FormRubro form = new FormRubro();
+            form.DialogResult = DialogResult.No;
+            form.ShowDialog();
+
+            if (form.DialogResult == DialogResult.Yes)
+            {
+                cargar_cbo(cborubro, "Nombre", "id_rubro", lc.ObtenerRubros(2));
+
             }
         }
     }

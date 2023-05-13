@@ -13,5 +13,7 @@ namespace GestionVentasBackend.Datos.Interfaz
         int VentasDelDia();
         int VentasDelMES();
 
+        bool FaltaStock();
+
     }
 }

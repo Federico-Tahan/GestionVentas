@@ -41,7 +41,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(216, 68);
+            this.label8.Location = new System.Drawing.Point(220, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(165, 20);
             this.label8.TabIndex = 15;
@@ -49,7 +49,7 @@
             // 
             // BtnActivar
             // 
-            this.BtnActivar.Location = new System.Drawing.Point(260, 148);
+            this.BtnActivar.Location = new System.Drawing.Point(264, 165);
             this.BtnActivar.Name = "BtnActivar";
             this.BtnActivar.Size = new System.Drawing.Size(76, 35);
             this.BtnActivar.TabIndex = 14;
@@ -60,7 +60,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(127, 100);
+            this.textBox1.Location = new System.Drawing.Point(131, 117);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(342, 26);
             this.textBox1.TabIndex = 13;
@@ -78,7 +78,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GestionVentasFrontend.Properties.Resources.image1;
-            this.pictureBox1.Location = new System.Drawing.Point(386, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(390, 75);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(592, 252);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnkey);

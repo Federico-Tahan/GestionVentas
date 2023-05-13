@@ -18,6 +18,18 @@ namespace GestionVentasNegocio.Interfaz
         List<Producto> ObtenerProducto(int rubro, int marca);
         List<FormaPago> ObtenerFormaPago(int modo);
 
+        bool AltaUnidadMed(UnidadMedida c);
+        bool UpdateUnidadMed(UnidadMedida c);
 
+
+        bool AltaLocalidad(Localidad c);
+        bool UpdateLocalidad(Localidad c);
+
+        bool AltaMarca(Marca c);
+        bool UpdateMarca(Marca c);
+        bool AltaRubro(Rubro c);
+        bool UpdateRubro(Rubro c);
+        bool AltaFp(FormaPago c);
+        bool UpdateFp(FormaPago c);
     }
 }

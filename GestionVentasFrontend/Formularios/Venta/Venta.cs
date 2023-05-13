@@ -30,8 +30,43 @@ namespace GestionVentasFrontend.Formularios.Venta
             lc = new Inmp_Cbo();
             lg = new Inmp_CrudProductos();
             f.LDetalle = detFact;
+            SeleccionarColor();
         }
+        ing_Configuracion lv = new ng_Configuracion();
 
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lv.TraerConfig();
+            int tema = c.t.id_tema;
+            string color = "#513b56";
+            string color2 = "#45364b";
+
+            if (tema == 1)
+            {
+                color = "#513b56";
+                color2 = "#45364b";
+
+            }
+            else if (tema == 2)
+            {
+                color = "#469d89";
+
+            }
+            else if (tema == 3)
+            {
+                color = "#adb5bd";
+
+            }
+            else if (tema == 4)
+            {
+                color = "#212529";
+
+            }
+
+            this.BackColor = ColorTranslator.FromHtml(color);
+
+        }
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
             if (f.LDetalle.Count == 0)

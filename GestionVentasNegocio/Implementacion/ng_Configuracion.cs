@@ -29,6 +29,11 @@ namespace GestionVentasNegocio.Implementacion
             return lg.GetLicencia();
         }
 
+        public List<Tema> GetTemas()
+        {
+            return lg.GetTemas();
+        }
+
         public bool InsertInfoEmpresa(string Nombre, string Direccion, string Cuit, byte[] imagen)
         {
             return lg.InsertInfoEmpresa(Nombre,Direccion,Cuit,imagen);
@@ -42,6 +47,11 @@ namespace GestionVentasNegocio.Implementacion
         public Config TraerConfig()
         {
            return lg.TraerConfig();
+        }
+
+        public bool UpdateTema(int i)
+        {
+            return lg.UpdateTema(i);
         }
     }
 }

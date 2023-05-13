@@ -1,4 +1,5 @@
 ﻿using GestionVentasBackend.Dominio;
+using GestionVentasFrontend.Formularios.Extra;
 using GestionVentasNegocio.Implementacion;
 using GestionVentasNegocio.Interfaz;
 using System;
@@ -19,7 +20,7 @@ namespace GestionVentasFrontend.Formularios
         In_CrudUsuario lg;
         In_Cbos lc;
 
-
+        ing_Configuracion lv = new ng_Configuracion();
         Usuario usuario = new Usuario();
         Usuario usuarioSeleccionado = new Usuario();
         Empleado emp = new Empleado();
@@ -28,12 +29,45 @@ namespace GestionVentasFrontend.Formularios
         public CrudUsuario()
         {
             InitializeComponent();
+            SeleccionarColor();
             lg = new Inmp_CrudUsuario();
             lc = new Inmp_Cbo();
             usuarioSeleccionado.Emp = emp;
 
         }
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lv.TraerConfig();
+            int tema = c.t.id_tema;
+            string color = "#513b56";
+            string color2 = "#45364b";
 
+            if (tema == 1)
+            {
+                color = "#513b56";
+                color2 = "#45364b";
+
+            }
+            else if (tema == 2)
+            {
+                color = "#469d89";
+
+            }
+            else if (tema == 3)
+            {
+                color = "#adb5bd";
+
+            }
+            else if (tema == 4)
+            {
+                color = "#212529";
+
+            }
+
+            this.BackColor = ColorTranslator.FromHtml(color);
+
+        }
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             pnlForm.Visible = true;
@@ -452,6 +486,19 @@ namespace GestionVentasFrontend.Formularios
                 CargarDgv(listaFiltrada);
             }
 
+        }
+
+        private void BtnLocalidad_Click(object sender, EventArgs e)
+        {
+            FormLocalidad f = new FormLocalidad();
+            f.DialogResult = DialogResult.No;
+            f.ShowDialog();
+
+            if (f.DialogResult == DialogResult.Yes)
+            {
+                cargar_cbo(cboLocalidad, "Nombre", "id_localidad", lc.ObtenerLocalidad(0));
+
+            }
         }
     }
 }

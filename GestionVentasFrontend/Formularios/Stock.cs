@@ -23,6 +23,8 @@ namespace GestionVentasFrontend.Formularios
         List<Producto> lproductos = new List<Producto>();
         List<Producto> lproductosAmodificar = new List<Producto>();
         Producto producoselected = new Producto();
+        ing_Configuracion lv = new ng_Configuracion();
+
         public Stock()
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace GestionVentasFrontend.Formularios
 
         private void Stock_Load(object sender, EventArgs e)
         {
+            SeleccionarColor();
             lproductos = lg.ObtenerProductos(0);
             cargarDgv(lproductos);
 
@@ -125,7 +128,7 @@ namespace GestionVentasFrontend.Formularios
                                 lproductos = lg.ObtenerProductos(0);
                                 cargarDgv(lproductos);
                                 cborubro.SelectedIndex = 0;
-                           
+                                chkVisible.Checked = false;
                             }
                         }
                         lproductosAmodificar = new List<Producto>();
@@ -247,6 +250,57 @@ namespace GestionVentasFrontend.Formularios
             {
                 // Establecer el color de fondo en White para filas impares
                 e.CellStyle.BackColor = ColorTranslator.FromHtml("#e2f0fb");
+            }
+        }
+
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lv.TraerConfig();
+            int tema = c.t.id_tema;
+            string color = "#513b56";
+            string color2 = "#45364b";
+
+            if (tema == 1)
+            {
+                color = "#513b56";
+                color2 = "#45364b";
+
+            }
+            else if (tema == 2)
+            {
+                color = "#469d89";
+
+            }
+            else if (tema == 3)
+            {
+                color = "#adb5bd";
+
+            }
+            else if (tema == 4)
+            {
+                color = "#212529";
+
+            }
+
+            this.BackColor = ColorTranslator.FromHtml(color);
+            BtnAplicar.BackColor = Color.FromArgb(31, 31, 31);
+            DgvStock.BackgroundColor = Color.FromArgb(31, 31, 31);
+            pnlStoc.BackColor = Color.FromArgb(31, 31, 31);
+        }
+
+        private void chkVisible_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (chkVisible.Checked)
+            {
+                List<Producto> listaFiltrada = lproductos.Where(p => p.Stock <= p.Stock_Minimo).ToList();
+                cargarDgv(listaFiltrada);
+            }
+            else 
+            {
+                lproductos = lg.ObtenerProductos(0);
+                cargarDgv(lproductos);
             }
         }
     }

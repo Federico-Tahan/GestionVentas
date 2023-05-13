@@ -18,14 +18,48 @@ namespace GestionVentasFrontend.Formularios
         Cliente c = new Cliente();
         List<Cliente> lclientes = new List<Cliente>();
         Cliente clienteSelected = new Cliente();
-        In_CrudCliente lg;
+
         public CrudCliente()
         {
             InitializeComponent();
             lg = new Inmp_CrudCliente();
+            SeleccionarColor();
+        }
+        In_CrudCliente lg; ing_Configuracion lv = new ng_Configuracion();
+
+        private void SeleccionarColor()
+        {
+            Config c = new Config();
+            c = lv.TraerConfig();
+            int tema = c.t.id_tema;
+            string color = "#513b56";
+            string color2 = "#45364b";
+
+            if (tema == 1)
+            {
+                color = "#513b56";
+                color2 = "#45364b";
+
+            }
+            else if (tema == 2)
+            {
+                color = "#469d89";
+
+            }
+            else if (tema == 3)
+            {
+                color = "#adb5bd";
+
+            }
+            else if (tema == 4)
+            {
+                color = "#212529";
+
+            }
+
+            this.BackColor = ColorTranslator.FromHtml(color);
 
         }
-
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
             pnlForm.Visible = true;

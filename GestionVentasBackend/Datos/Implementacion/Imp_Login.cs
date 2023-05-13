@@ -37,7 +37,6 @@ namespace GestionVentasBackend.Datos.Implementacion
                 {
                     Empleado e = new Empleado();
                     Rol r = new Rol();
-                    u.rol = r;
                     if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(0))
                     {
                         e.DNI = HelperDB.ObtenerInstancia().Dr.GetInt64(0);
@@ -58,6 +57,7 @@ namespace GestionVentasBackend.Datos.Implementacion
                     {
                         u.Id_Usuario = HelperDB.ObtenerInstancia().Dr.GetInt32(4);
                     }
+                    u.rol = r;
                     u.Emp = e;
                     HelperDB.ObtenerInstancia().close();
                     return true;

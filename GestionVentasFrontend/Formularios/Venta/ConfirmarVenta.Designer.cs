@@ -47,6 +47,7 @@
             this.BtnConfirmar = new System.Windows.Forms.Button();
             this.lbdni = new System.Windows.Forms.Label();
             this.cboDNI = new System.Windows.Forms.ComboBox();
+            this.BtnAgregarCliente = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -277,12 +278,32 @@
             this.cboDNI.SelectionChangeCommitted += new System.EventHandler(this.cboDNI_SelectionChangeCommitted);
             this.cboDNI.SelectedValueChanged += new System.EventHandler(this.cboDNI_SelectedValueChanged);
             // 
+            // BtnAgregarCliente
+            // 
+            this.BtnAgregarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BtnAgregarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.BtnAgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAgregarCliente.FlatAppearance.BorderSize = 0;
+            this.BtnAgregarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.BtnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnAgregarCliente.Location = new System.Drawing.Point(467, 9);
+            this.BtnAgregarCliente.Name = "BtnAgregarCliente";
+            this.BtnAgregarCliente.Size = new System.Drawing.Size(29, 28);
+            this.BtnAgregarCliente.TabIndex = 65;
+            this.BtnAgregarCliente.Text = "+";
+            this.BtnAgregarCliente.UseVisualStyleBackColor = false;
+            this.BtnAgregarCliente.Visible = false;
+            this.BtnAgregarCliente.Click += new System.EventHandler(this.BtnAgregarCliente_Click);
+            // 
             // ConfirmarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(133)))), ((int)(((byte)(151)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(59)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(682, 426);
+            this.Controls.Add(this.BtnAgregarCliente);
             this.Controls.Add(this.cboDNI);
             this.Controls.Add(this.lbdni);
             this.Controls.Add(this.BtnConfirmar);
@@ -336,5 +357,6 @@
         private System.Windows.Forms.Button BtnConfirmar;
         private System.Windows.Forms.Label lbdni;
         private System.Windows.Forms.ComboBox cboDNI;
+        private System.Windows.Forms.Button BtnAgregarCliente;
     }
 }

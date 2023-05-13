@@ -17,5 +17,7 @@ namespace GestionVentasNegocio.Interfaz
         bool InsertInfoEmpresa(string Nombre, string Direccion, string Cuit, byte[] imagen);
 
         Config TraerConfig();
+        List<Tema> GetTemas();
+        bool UpdateTema(int i);
     }
 }

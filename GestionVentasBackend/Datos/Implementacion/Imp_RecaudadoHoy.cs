@@ -10,6 +10,31 @@ namespace GestionVentasBackend.Datos.Implementacion
 {
     public class Imp_InfoPrincipal : IInfoPrincipal
     {
+        public bool FaltaStock()
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().LeerDB("SP_FaltaStock");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+
+                if (HelperDB.ObtenerInstancia().Dr.Read())
+                {
+
+                    HelperDB.ObtenerInstancia().close();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public decimal RecaudadoHoy()
         {
             try

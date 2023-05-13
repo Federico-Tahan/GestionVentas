@@ -10,6 +10,42 @@ namespace GestionVentasBackend.Datos.Implementacion
 {
     public class Imp_Cbos : iCbos
     {
+        public bool AltaUnidadMed(UnidadMedida c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@decimales", c.CantidadDecimal);
+                HelperDB.ObtenerInstancia().updatear_db("SP_AltaUnidadMed");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateUnidadMed(UnidadMedida c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id", c.Id_UnidadMedida);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@decimales", c.CantidadDecimal);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@baja_logica", c.BajaLogica);
+                HelperDB.ObtenerInstancia().updatear_db("SP_UpdateMedida");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public List<FormaPago> ObtenerFormaPago(int modo)
         {
             List<FormaPago> td = new List<FormaPago>();
@@ -94,6 +130,10 @@ namespace GestionVentasBackend.Datos.Implementacion
                 if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(1))
                 {
                     rl.Nombre = HelperDB.ObtenerInstancia().Dr.GetString(1);
+                }
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(2))
+                {
+                    rl.BajaLogica = HelperDB.ObtenerInstancia().Dr.GetInt32(2);
                 }
                 td.Add(rl);
             }
@@ -221,6 +261,10 @@ namespace GestionVentasBackend.Datos.Implementacion
                 {
                     rl.Nombre = HelperDB.ObtenerInstancia().Dr.GetString(1);
                 }
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(2))
+                {
+                    rl.BajaLogica = HelperDB.ObtenerInstancia().Dr.GetInt32(2);
+                }
                 td.Add(rl);
             }
             HelperDB.ObtenerInstancia().close();
@@ -249,15 +293,155 @@ namespace GestionVentasBackend.Datos.Implementacion
                 {
                     rl.Nombre = HelperDB.ObtenerInstancia().Dr.GetString(1);
                 }
-                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(1))
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(3))
                 {
                     rl.CantidadDecimal = HelperDB.ObtenerInstancia().Dr.GetInt32(3);
+                }
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(2))
+                {
+                    rl.BajaLogica = HelperDB.ObtenerInstancia().Dr.GetInt32(2);
                 }
                 td.Add(rl);
             }
             HelperDB.ObtenerInstancia().close();
 
             return td;
+        }
+
+        public bool AltaLocalidad(Localidad c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().updatear_db("SP_AltaLocalidad");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateLocalidad(Localidad c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id", c.id_Localidad);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@baja_logica", c.Baja_Logica);
+                HelperDB.ObtenerInstancia().updatear_db("SP_UpdateLocalidad");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool AltaMarca(Marca c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().updatear_db("SP_AltaMarca");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateMarca(Marca c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id", c.id_Marca);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@baja_logica", c.BajaLogica);
+                HelperDB.ObtenerInstancia().updatear_db("SP_UpdateMarca");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool AltaRubro(Rubro c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().updatear_db("SP_AltaRubro");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateRubro(Rubro c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id", c.id_rubro);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Nombre);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@baja_logica", c.BajaLogica);
+                HelperDB.ObtenerInstancia().updatear_db("SP_UpdateRubro");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool AltaFp(FormaPago c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Formapago);
+                HelperDB.ObtenerInstancia().updatear_db("SP_AltaFormaPago");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateFp(FormaPago c)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id", c.id_formapago);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@nombre", c.Formapago);
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@baja_logica", c.Baja_logica);
+                HelperDB.ObtenerInstancia().updatear_db("SP_UpdateFormaPago");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

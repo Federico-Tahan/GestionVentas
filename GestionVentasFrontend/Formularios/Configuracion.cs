@@ -1,4 +1,5 @@
 ﻿using GestionVentasBackend.Dominio;
+using GestionVentasFrontend.Formularios.Extra;
 using GestionVentasNegocio.Implementacion;
 using GestionVentasNegocio.Interfaz;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
@@ -24,11 +25,21 @@ namespace GestionVentasFrontend.Formularios
         {
             InitializeComponent();
         }
+        private void cargar_cbo<T>(ComboBox cbo, string display, string value, List<T> lista)
+        {
+            cbo.DataSource = lista;
+            cbo.DisplayMember = display;
+            cbo.ValueMember = value;
+            cbo.SelectedIndex = -1;
+        }
 
         private void BtnBackup_Click(object sender, EventArgs e)
         {
             pnlBackup.Visible = true;
             pnlGeneral.Visible = false;
+            pnltema.Visible = false;
+            pnlIngresoDatos.Visible = false;
+
         }
 
         private void BtnSeleccionar_Click(object sender, EventArgs e)
@@ -111,6 +122,9 @@ namespace GestionVentasFrontend.Formularios
         {
             pnlBackup.Visible = false;
             pnlGeneral.Visible = true;
+            pnltema.Visible = false;
+            pnlIngresoDatos.Visible = false;
+
         }
 
         private void BtnSubir_Click(object sender, EventArgs e)
@@ -178,13 +192,72 @@ namespace GestionVentasFrontend.Formularios
                 MemoryStream ms = new MemoryStream(config.Imagen);
                 picImage.Image = Image.FromStream(ms);
             }
-
+            cargar_cbo(CboTema, "nombre", "id_tema",lg.GetTemas());
+            CboTema.SelectedValue = config.t.id_tema;
 
         }
 
         private void Configuracion_Load(object sender, EventArgs e)
         {
             TraerConfig();
+        }
+
+        private void BtnTemas_Click(object sender, EventArgs e)
+        {
+            pnlBackup.Visible = false;
+            pnlGeneral.Visible = false;
+            pnltema.Visible = true;
+            pnlIngresoDatos.Visible = false;
+
+        }
+
+        private void BtnGuar_Click(object sender, EventArgs e)
+        {
+            if (lg.UpdateTema((int)CboTema.SelectedValue)) 
+            {
+                MessageBox.Show("Tema actualizado con Exito, Reinicie el programa para visualizar los cambios", "");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            pnltema.Visible = true;
+            pnlIngresoDatos.Visible = true;
+        }
+
+        private void BtnRubro_Click(object sender, EventArgs e)
+        {
+            FormRubro f = new FormRubro();
+            f.ShowDialog();
+        }
+
+        private void BtnMarca_Click(object sender, EventArgs e)
+        {
+            FormMarca f = new FormMarca();
+            f.ShowDialog();
+        }
+
+        private void BtnUMed_Click(object sender, EventArgs e)
+        {
+            UnidadDeMedida f = new UnidadDeMedida();
+            f.ShowDialog();
+        }
+
+        private void BtnLoc_Click(object sender, EventArgs e)
+        {
+            FormLocalidad f = new FormLocalidad();
+            f.ShowDialog(); 
+        }
+
+        private void BtnFpago_Click(object sender, EventArgs e)
+        {
+            FormFormaPago f = new FormFormaPago();
+            f.ShowDialog();
         }
     }
 }

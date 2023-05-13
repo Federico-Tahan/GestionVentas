@@ -12,5 +12,6 @@ namespace GestionVentasBackend.Dominio
         public string Nombre { get; set; }
         public string Direccion { get; set; }
         public byte[] Imagen { get; set; }
+        public Tema t { get; set; }
     }
 }

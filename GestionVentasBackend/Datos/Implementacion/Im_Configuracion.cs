@@ -9,6 +9,7 @@ using System.Net;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GestionVentasBackend.Datos.Implementacion
 {
@@ -72,6 +73,34 @@ namespace GestionVentasBackend.Datos.Implementacion
             return macAddress.Replace(":", "");
         }
 
+        public List<Tema> GetTemas()
+        {
+            List<Tema> td = new List<Tema>();
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+            HelperDB.ObtenerInstancia().LeerDB("SP_Tema");
+            HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+
+            while (HelperDB.ObtenerInstancia().Dr.Read())
+            {
+                Tema rl = new Tema();
+
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(0))
+                {
+                    rl.id_tema = HelperDB.ObtenerInstancia().Dr.GetInt32(0);
+                }
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(1))
+                {
+                    rl.nombre = HelperDB.ObtenerInstancia().Dr.GetString(1);
+                }
+
+                td.Add(rl);
+            }
+            HelperDB.ObtenerInstancia().close();
+
+            return td;
+        }
+    
+
         public bool InsertInfoEmpresa(string Nombre, string Direccion, string Cuit, byte[] imagen)
         {
             try
@@ -113,7 +142,7 @@ namespace GestionVentasBackend.Datos.Implementacion
             HelperDB.ObtenerInstancia().LeerDB("SP_TraerConfig");
             HelperDB.ObtenerInstancia().Command.Parameters.Clear();
             Config rl = new Config();
-
+            Tema t = new Tema();
             if (HelperDB.ObtenerInstancia().Dr.Read())
             {
                 if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(0))
@@ -132,11 +161,31 @@ namespace GestionVentasBackend.Datos.Implementacion
                 {
                     rl.Direccion = HelperDB.ObtenerInstancia().Dr.GetString(3);
                 }
+                if (!HelperDB.ObtenerInstancia().Dr.IsDBNull(5))
+                {
+                    t.id_tema = HelperDB.ObtenerInstancia().Dr.GetInt32(5);
+                }
             }
         
             HelperDB.ObtenerInstancia().close();
-
+            rl.t = t;
             return rl;
+        }
+
+        public bool UpdateTema(int i)
+        {
+            try
+            {
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                HelperDB.ObtenerInstancia().Command.Parameters.AddWithValue("@id", i);
+                HelperDB.ObtenerInstancia().updatear_db("SP_Insert_Tema");
+                HelperDB.ObtenerInstancia().Command.Parameters.Clear();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
