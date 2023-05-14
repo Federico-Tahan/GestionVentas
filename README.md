@@ -1,12 +1,12 @@
 ## GestionVentas
 Este proyecto está destinado a ser vendido y, por lo tanto, el código se mantendrá como información privada y confidencial. Si está interesado en revisar el código, le insto a que se ponga en contacto conmigo.
 
-#*Activacion del programa*.
+##*Activacion del programa*.
 
 ![Captura de pantalla 2023-05-14 115538](https://github.com/Federico-Tahan/GestionVentas/assets/88520985/02c8ae32-95a3-4060-8278-4231ac594ff1)
 
 
-#*Sistema de Logeo*
+##*Sistema de Logeo*
 ![Captura de pantalla 2023-05-14 115002](https://github.com/Federico-Tahan/GestionVentas/assets/88520985/b127004c-601b-49e5-a2ce-f74a430ccc12)
 
 
